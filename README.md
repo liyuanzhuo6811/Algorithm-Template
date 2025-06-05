@@ -1,2 +1,1 @@
-# Algorithm-Template
-算法模板/代码库
+模板库
