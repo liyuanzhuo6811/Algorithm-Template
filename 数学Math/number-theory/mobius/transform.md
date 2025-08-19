@@ -1,0 +1,1 @@
+$$f(n)=\sum_{d|n}g(d) \iff g(n)=\sum_{d|n}\mu(d)f(\frac{n}{d})$$

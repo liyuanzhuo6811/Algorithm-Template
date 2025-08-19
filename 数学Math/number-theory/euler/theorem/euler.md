@@ -1,0 +1,1 @@
+$$\gcd(a,m)=1,a^{\varphi(m)}\equiv 1 \pmod m$$
