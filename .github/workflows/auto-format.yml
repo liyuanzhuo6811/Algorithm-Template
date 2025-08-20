@@ -26,7 +26,9 @@ jobs:
     needs: prepare
     steps:
       - name: Run
-        run: python autoformat.py >> "$GITHUB_OUTPUT"
+        run: |
+          - cd 
+          - python ./autoformat.py >> "$GITHUB_OUTPUT"
   
   commit:
     name: Run Format
