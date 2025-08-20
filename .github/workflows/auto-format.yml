@@ -33,6 +33,7 @@ jobs:
       with:
         github_token: ${{ secrets.ACCESS_TOKEN }}
         branch: formatted
+        force: true
 
     - name: Pull Request
       uses: peter-evans/create-pull-request@v3
