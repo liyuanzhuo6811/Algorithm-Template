@@ -27,7 +27,9 @@ jobs:
     steps:
       - name: Run
         run: |
-          python ./autoformat.py >> "$GITHUB_OUTPUT"
+          ls -al
+          ls .. -al
+          python /home/runner/work/Algorithm-Template/Algorithm-Template/autoformat.py >> "$GITHUB_OUTPUT"
   
   commit:
     name: Commit
