@@ -27,7 +27,6 @@ jobs:
     steps:
       - name: Run
         run: |
-          - cd 
           - python ./autoformat.py >> "$GITHUB_OUTPUT"
   
   commit:
