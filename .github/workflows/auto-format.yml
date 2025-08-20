@@ -1,0 +1,42 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  format:
+    outputs:
+      IsChanged: $
+    name: Use Clang-Format to auto-format the code.
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Clang
+      uses: egor-tensin/setup-clang@v1
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13' 
+
+    - name: Run Format
+      run: python autoformat.py >> "$GITHUB_OUTPUT"
+
+    - name: Commit if the code is changed
+      if: jobs.format.outputs.IsChanged == "True"        
+      run: |
+          git config --local user.name liyuanzhuo6811
+          git config --local user.email liyuanzhuo6811@outlook.com
+          git commit -a -m '自动格式化代码'
+
+    - name: Pull Request
+      if: jobs.format.outputs.IsChanged == "True"  
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: 自动格式化
+        body: |
+          自动格式化代码
+        committer: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
+        author: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
+        assignees: liyuanzhuo6811,real01bit,lhc0707
+        reviewers: liyuanzhuo6811,real01bit,lhc0707
+        branch: main
+      
