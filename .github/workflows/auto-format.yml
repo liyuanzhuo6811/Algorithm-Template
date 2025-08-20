@@ -43,8 +43,8 @@ jobs:
           自动格式化代码
         committer: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
         author: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
-        assignees: liyuanzhuo6811,real01bit,lhc0707
-        reviewers: liyuanzhuo6811,real01bit,lhc0707
+        assignees: liyuanzhuo6811,real01bit,lotus-grass
+        reviewers: liyuanzhuo6811,real01bit,lotus-grass
         branch: formatted
         base: main
 
