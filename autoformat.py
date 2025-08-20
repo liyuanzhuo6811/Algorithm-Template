@@ -6,4 +6,4 @@ for dirpath, dirnames, filenames in os.walk(os.getcwd()):
         if ".cpp" in file:
             if file[-4:] == ".cpp":
                 print(f"Formating:{dirpath}/{file}")
-                os.system(f"clang-format --style=file \"{dirpath}\\{file}\" -i")
+                os.system(f"clang-format --style=file \"{dirpath}/{file}\" -i")
