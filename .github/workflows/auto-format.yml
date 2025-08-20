@@ -30,6 +30,7 @@ jobs:
     steps:
       - name: Run
         run: |
+          pwd
           cd Algorithm-Template
           ls -al
           ls .. -al
