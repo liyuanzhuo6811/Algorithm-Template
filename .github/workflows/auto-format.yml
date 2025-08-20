@@ -13,8 +13,8 @@ jobs:
         token: ${{ secrets.ACCESS_TOKEN }}
         ref: main
 
-    - name: Set up Clang-Format
-      run: sudo apt install clang-format -y
+    # - name: Set up Clang-Format
+    #   run: sudo apt install clang-format -y
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -32,4 +32,19 @@ jobs:
       uses: Andro999b/push@v1.3
       with:
         github_token: ${{ secrets.ACCESS_TOKEN }}
+        branch: formatted
+
+    - name: Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with: 
+        token: ${{ secrets.ACCESS_TOKEN }}
+        title: 自动格式化
+        body: |
+          自动格式化代码
+        committer: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
+        author: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
+        assignees: liyuanzhuo6811,real01bit,lhc0707
+        reviewers: liyuanzhuo6811,real01bit,lhc0707
+        branch: formatted
+        base: main
 
