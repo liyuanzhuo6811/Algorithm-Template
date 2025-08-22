@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - main
+      - nothing
 jobs:
   prepare:
     name: Format
@@ -23,7 +23,10 @@ jobs:
 
     - name: Run
       run: |
-        python work/autoformat.py
+        pwd
+        ls -al
+        ls .. -al
+        python autoformat.py
 
     - name: Commit
       uses: Andro999b/push@v1.3
