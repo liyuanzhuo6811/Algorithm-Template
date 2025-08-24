@@ -35,4 +35,5 @@ jobs:
         branch: PDF
         file_pattern: work/tex/all-pdf.pdf
         commit_message: "Make the code to PDF."
+        create_branch: true
 
