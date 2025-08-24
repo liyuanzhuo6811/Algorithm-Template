@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - main
+      - formatted
 
 name: Make PDF
 jobs:
@@ -34,6 +34,7 @@ jobs:
     - name: Commit
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        branch: main
+        branch: PDF
+        file_pattern: work/tex/all-pdf.pdf
         commit_message: "Make the code to PDF."
 

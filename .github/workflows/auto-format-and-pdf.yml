@@ -3,7 +3,7 @@ on:
     branches:
       - main
 jobs:
-  prepare:
+  format:
     name: Format
     runs-on: ubuntu-latest
     steps:
@@ -46,3 +46,41 @@ jobs:
         branch: formatted
         base: main
 
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tranvinh21/auto-merge-pr@v1
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+  topdf:
+    name: Make PDF
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        ref: main
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13' 
+
+    - name: Set up TeX Live
+      run: |
+        sudo apt update
+        sudo apt install texlive-full -y
+    
+    - name: Make PDF
+      run: |
+        python work/makelatex.py
+        cd work/tex
+        xelatex all-pdf.tex
+
+    - name: Commit
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        branch: PDF
+        file_pattern: work/tex/all-pdf.pdf
+        commit_message: "Make the code to PDF."
