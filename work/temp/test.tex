@@ -2,37 +2,83 @@
 \usepackage{ctex}
 \usepackage{authblk}
 \usepackage{listings}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+\titleformat{\chapter}
+{\normalfont\Large\bfseries}{第 \thechapter 部分}{1em}{}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\geometry{left=3.18cm, right=3.18cm, top=2.54cm, bottom=2.54cm}
 \title{\Huge XCPC Template Library}
 \author{
     Wu Honglin / real01bit \\
     Li Yuanzhuo / SnowFlavour \\
     Liu Haocheng / lotus\_grass \\
 }
-\date{Date}
+\date{最后一次修改：\today}
+\newfontfamily\firacode{FiraCode-Regular.ttf}
 \lstset{
-    language=C++, % 设置语言
- basicstyle=\ttfamily, % 设置字体族
- breaklines=true, % 自动换行
- keywordstyle=\bfseries, % 设置关键字为粗体，颜色为 NavyBlue
- morekeywords={}, % 设置更多的关键字，用逗号分隔
- emph={self}, % 指定强调词，如果有多个，用逗号隔开
-    emphstyle=\bfseries, % 强调词样式设置
-    commentstyle=\itshape, % 设置注释样式，斜体，浅灰色
-    stringstyle=\bfseries, % 设置字符串样式
+    language=C++,
+    basicstyle=\firacode,
+    breaklines=true,
+    keywordstyle=\bfseries\color{red},
+    stringstyle=\color{green}\ttfamily,
+    morekeywords={},
+    emph={self},
+    emphstyle=\bfseries,
+    commentstyle=\itshape,
+    stringstyle=\bfseries,
     columns=flexible,
-    numbers=left, % 显示行号在左边
-    numbersep=2em, % 设置行号的具体位置
-    numberstyle=\footnotesize, % 缩小行号
-    frame=single, % 边框
-    framesep=1em % 设置代码与边框的距离
+    numbers=left,
+    numbersep=2em,
+    numberstyle=\footnotesize,
+    frame=topline,
+    framesep=1em
 }
 \begin{document}
+\maketitle
+\chapter{数据结构Data Structure}
+\section{1111}
+\subsection{ST表}
+\begin{lstlisting}[language={C++}]
+#include <cmath>
+#include <cstdio>
+#include <iostream>
+using namespace std;
+int n, m, a[1010000], st[1010000][200];
+int main() {
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++) scanf("%d", a + i), st[i][i] = a[i];
+    for (int j = 1; 1 + (1 << j) <= n; j++)
+        for (int i = 1; i + (1 << j) - 1 <= n; i++) st[i][j] = max(st[i][j - 1], st[i + (1 << j - 1)][j - 1]);
+    while (m--) {
+        int l, r, ans;
+        scanf("%d%d", &l, &r);
+        int t = log2(r - l + 1);
+        ans = max(st[l][t], st[r - (1 << t) + 1][t]);
+        printf("%d\n", ans);
+    }
+    return 0;
+}
+\end{lstlisting}
+\section{这是一个标题的示例}
+\subsection{这是一个子标题}
 \begin{lstlisting}[language={C++}]
 #include <iostream>
 using namespace std;
 int main() {
     int n;
     cin >> n;
+    string s = "adsfadsf";
 }
 \end{lstlisting}
 \end{document}
