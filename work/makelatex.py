@@ -1,7 +1,7 @@
 import os
 print(os.getcwd())
 titf = ["chapter", "section", "subsection", "subsubsection", "paragraph", "subparagraph"]
-tex = open("work\\temp1\\test.tex", "w", encoding="utf8")
+tex = open("work/tex/all-pdf.tex", "w", encoding="utf8")
 tex.write("""\\documentclass[9pt, a4paper, oneside]{book}
 \\usepackage{ctex}
 \\usepackage{authblk}
@@ -59,12 +59,12 @@ def gci(filepath, rootpath):
     if ".makelatex-ignore" in files or ".git" in filepath or ".vscode" in filepath:
         return
     print(filepath)
-    totc = list(rootpath).count("\\")
-    nowc = list(filepath).count("\\")
+    totc = list(rootpath).count("/")
+    nowc = list(filepath).count("/")
     # print(totc, nowc)
     # print(nowc - totc)
     # print(fi)
-    red = filepath.split("\\")[-1]
+    red = filepath.split("/")[-1]
     if nowc > totc:
         tex.write(f"\\{titf[nowc - totc - 1]}{{{red}}}\n")
 

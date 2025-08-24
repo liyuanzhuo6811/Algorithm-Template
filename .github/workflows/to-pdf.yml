@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - nothing
+      - main
 jobs:
   prepare:
     name: Format
@@ -13,39 +13,23 @@ jobs:
         token: ${{ secrets.ACCESS_TOKEN }}
         ref: main
 
-    # - name: Set up Clang-Format
-    #   run: sudo apt install clang-format -y
-
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.13' 
 
-    - name: Run
+    - name: Set up TeX Live
+      run: sudo apt install texlive-full -y
+    
+    - name: Make PDF
       run: |
-        pwd
-        ls -al
-        ls .. -al
-        python autoformat.py
+        python work/makelatex.py
+        cd work/tex
+        xelatex all-pdf.pdf
 
     - name: Commit
-      uses: Andro999b/push@v1.3
+      uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        github_token: ${{ secrets.ACCESS_TOKEN }}
-        branch: formatted
-        force: true
-
-    - name: Pull Request
-      uses: peter-evans/create-pull-request@v3
-      with: 
-        token: ${{ secrets.ACCESS_TOKEN }}
-        title: 自动格式化
-        body: |
-          自动格式化代码
-        committer: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
-        author: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
-        assignees: liyuanzhuo6811,real01bit,lotus-grass
-        reviewers: liyuanzhuo6811,real01bit,lotus-grass
-        branch: formatted
-        base: main
+        branch: main
+        commit_message: "Make the code to PDF."
 
