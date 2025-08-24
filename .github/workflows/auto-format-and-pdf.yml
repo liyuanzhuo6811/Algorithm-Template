@@ -47,12 +47,16 @@ jobs:
         base: main
 
   auto-merge:
+    needs: format
     runs-on: ubuntu-latest
     steps:
       - uses: tranvinh21/auto-merge-pr@v1
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
   topdf:
+    needs: 
+      - format
+      - auto-merge
     name: Make PDF
     runs-on: ubuntu-latest
     steps:
@@ -76,6 +80,7 @@ jobs:
       run: |
         python work/makelatex.py
         cd work/tex
+        xelatex all-pdf.tex
         xelatex all-pdf.tex
 
     - name: Commit
