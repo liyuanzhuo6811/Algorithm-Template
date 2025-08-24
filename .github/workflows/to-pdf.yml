@@ -2,9 +2,11 @@ on:
   push:
     branches:
       - main
+
+name: Make PDF
 jobs:
-  prepare:
-    name: Format
+  topdf:
+    name: Make PDF
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -27,7 +29,7 @@ jobs:
       run: |
         python work/makelatex.py
         cd work/tex
-        xelatex all-pdf.pdf
+        xelatex all-pdf.tex
 
     - name: Commit
       uses: stefanzweifel/git-auto-commit-action@v4
