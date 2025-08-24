@@ -19,7 +19,9 @@ jobs:
         python-version: '3.13' 
 
     - name: Set up TeX Live
-      run: sudo apt install texlive-full -y
+      run: |
+        sudo apt update
+        sudo apt install texlive-full -y
     
     - name: Make PDF
       run: |
