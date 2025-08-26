@@ -1,3 +1,4 @@
+// {"name": "快速傅里叶变换", "intro": "（需要补充）"}
 #include <cmath>
 #include <cstdio>
 #include <iostream>

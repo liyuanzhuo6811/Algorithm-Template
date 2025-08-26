@@ -1,3 +1,4 @@
+// {"name": "树状数组1", "intro": "单点修改，区间查询的树状数组。"}
 #include <iostream>
 using namespace std;
 const int N = 5e5 + 10;

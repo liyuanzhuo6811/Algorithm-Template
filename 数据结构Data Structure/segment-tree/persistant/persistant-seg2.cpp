@@ -1,3 +1,4 @@
+// {"name": "可持久化线段树2", "intro": "区间第 $k$ 小问题。"}
 #include <algorithm>
 #include <cstdio>
 #include <iostream>

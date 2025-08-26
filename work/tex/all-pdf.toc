@@ -1,93 +1,91 @@
-\contentsline {chapter}{\numberline {1}数据结构Data Structure}{2}{}%
-\contentsline {section}{\numberline {1.1}bst}{2}{}%
-\contentsline {subsection}{\numberline {1.1.1}fhq-treap.cpp}{2}{}%
-\contentsline {subsection}{\numberline {1.1.2}splay.cpp}{3}{}%
-\contentsline {section}{\numberline {1.2}fenwick}{5}{}%
-\contentsline {subsection}{\numberline {1.2.1}fenwick-2.cpp}{5}{}%
-\contentsline {subsection}{\numberline {1.2.2}fenwick-1.cpp}{6}{}%
-\contentsline {section}{\numberline {1.3}segment-tree}{7}{}%
-\contentsline {subsection}{\numberline {1.3.1}persistant}{7}{}%
-\contentsline {subsubsection}{persistant-seg2.cpp}{7}{}%
-\contentsline {subsubsection}{persistant-seg1.cpp}{8}{}%
-\contentsline {subsection}{\numberline {1.3.2}sgt-split.cpp}{9}{}%
-\contentsline {subsection}{\numberline {1.3.3}sgt-1.cpp}{11}{}%
-\contentsline {subsection}{\numberline {1.3.4}sgt-2.cpp}{12}{}%
-\contentsline {subsection}{\numberline {1.3.5}sgt-merge.cpp}{14}{}%
-\contentsline {subsection}{\numberline {1.3.6}lc-segment.cpp}{16}{}%
-\contentsline {section}{\numberline {1.4}dynamic-tree}{18}{}%
-\contentsline {subsection}{\numberline {1.4.1}lct.cpp}{18}{}%
-\contentsline {section}{\numberline {1.5}dsu.cpp}{19}{}%
-\contentsline {section}{\numberline {1.6}st-table.cpp}{20}{}%
-\contentsline {chapter}{\numberline {2}图论Graph}{21}{}%
-\contentsline {section}{\numberline {2.1}connectivity}{21}{}%
-\contentsline {subsection}{\numberline {2.1.1}bcc}{21}{}%
-\contentsline {subsubsection}{edge.cpp}{21}{}%
-\contentsline {subsubsection}{point.cpp}{22}{}%
-\contentsline {subsection}{\numberline {2.1.2}scc}{23}{}%
-\contentsline {subsubsection}{tarjan.cpp}{23}{}%
-\contentsline {subsubsection}{kosaraju.cpp}{25}{}%
-\contentsline {section}{\numberline {2.2}shortest-path}{26}{}%
-\contentsline {subsection}{\numberline {2.2.1}dijkstra.cpp}{26}{}%
-\contentsline {subsection}{\numberline {2.2.2}spfa.cpp}{26}{}%
-\contentsline {section}{\numberline {2.3}mst}{27}{}%
-\contentsline {subsection}{\numberline {2.3.1}prim.cpp}{27}{}%
-\contentsline {subsection}{\numberline {2.3.2}kruscal.cpp}{28}{}%
-\contentsline {section}{\numberline {2.4}tree}{29}{}%
-\contentsline {subsection}{\numberline {2.4.1}diameter.cpp}{29}{}%
-\contentsline {subsection}{\numberline {2.4.2}virtual-tree.cpp}{29}{}%
-\contentsline {subsection}{\numberline {2.4.3}centroid.cpp}{30}{}%
-\contentsline {subsection}{\numberline {2.4.4}hld.cpp}{30}{}%
-\contentsline {section}{\numberline {2.5}diff-constraints.cpp}{31}{}%
-\contentsline {chapter}{\numberline {3}杂项Misc}{33}{}%
-\contentsline {section}{\numberline {3.1}offline}{33}{}%
-\contentsline {subsection}{\numberline {3.1.1}mo}{33}{}%
-\contentsline {subsubsection}{secondary-offline.cpp}{33}{}%
-\contentsline {subsubsection}{mo-algo.cpp}{35}{}%
-\contentsline {section}{\numberline {3.2}odt.cpp}{36}{}%
-\contentsline {chapter}{\numberline {4}字符串String}{39}{}%
-\contentsline {section}{\numberline {4.1}SA}{39}{}%
-\contentsline {subsection}{\numberline {4.1.1}DC3.cpp}{39}{}%
-\contentsline {subsection}{\numberline {4.1.2}SA-IS.cpp}{40}{}%
-\contentsline {section}{\numberline {4.2}trie}{42}{}%
-\contentsline {subsection}{\numberline {4.2.1}persistent-trie.cpp}{42}{}%
-\contentsline {subsection}{\numberline {4.2.2}trie.cpp}{43}{}%
-\contentsline {section}{\numberline {4.3}hash}{44}{}%
-\contentsline {subsection}{\numberline {4.3.1}double-valued.cpp}{44}{}%
-\contentsline {subsection}{\numberline {4.3.2}modular.cpp}{45}{}%
-\contentsline {section}{\numberline {4.4}z-func.cpp}{45}{}%
-\contentsline {section}{\numberline {4.5}kmp.cpp}{46}{}%
-\contentsline {section}{\numberline {4.6}acam.cpp}{46}{}%
-\contentsline {section}{\numberline {4.7}manacher.cpp}{47}{}%
-\contentsline {chapter}{\numberline {5}数学Math}{49}{}%
-\contentsline {section}{\numberline {5.1}number-theory}{49}{}%
-\contentsline {subsection}{\numberline {5.1.1}lucas}{49}{}%
-\contentsline {subsubsection}{ex-lucas.cpp}{49}{}%
-\contentsline {subsubsection}{lucas.cpp}{51}{}%
-\contentsline {subsection}{\numberline {5.1.2}mobius}{51}{}%
-\contentsline {subsubsection}{sieve.cpp}{51}{}%
-\contentsline {subsection}{\numberline {5.1.3}prime}{52}{}%
-\contentsline {subsubsection}{miller-rabin.cpp}{52}{}%
-\contentsline {subsubsection}{sieve.cpp}{53}{}%
-\contentsline {subsection}{\numberline {5.1.4}euler}{53}{}%
-\contentsline {subsubsection}{theorem}{53}{}%
-\contentsline {subsubsection}{get-euler.cpp}{53}{}%
-\contentsline {subsubsection}{sieve.cpp}{53}{}%
-\contentsline {subsection}{\numberline {5.1.5}exgcd.cpp}{54}{}%
-\contentsline {subsection}{\numberline {5.1.6}sqrt-decomposition.cpp}{54}{}%
-\contentsline {subsection}{\numberline {5.1.7}crt.cpp}{55}{}%
-\contentsline {subsection}{\numberline {5.1.8}du.cpp}{55}{}%
-\contentsline {subsection}{\numberline {5.1.9}pollard-rho.cpp}{56}{}%
-\contentsline {section}{\numberline {5.2}lineral-programming}{58}{}%
-\contentsline {subsection}{\numberline {5.2.1}simpex.cpp}{58}{}%
-\contentsline {section}{\numberline {5.3}lineral-algebra}{59}{}%
-\contentsline {subsection}{\numberline {5.3.1}mat.cpp}{59}{}%
-\contentsline {section}{\numberline {5.4}poly}{60}{}%
-\contentsline {subsection}{\numberline {5.4.1}fft}{60}{}%
-\contentsline {subsubsection}{divide-and-conquer.cpp}{60}{}%
-\contentsline {subsubsection}{iteration.cpp}{61}{}%
-\contentsline {subsection}{\numberline {5.4.2}fwt.cpp}{63}{}%
-\contentsline {subsection}{\numberline {5.4.3}ntt.cpp}{65}{}%
-\contentsline {section}{\numberline {5.5}binary-exponentiation.cpp}{67}{}%
-\contentsline {section}{\numberline {5.6}gauss.cpp}{67}{}%
-\contentsline {section}{\numberline {5.7}quick-pow.cpp}{68}{}%
-\contentsline {section}{\numberline {5.8}bignum.cpp}{68}{}%
+\contentsline {chapter}{\numberline {1}图论Graph}{4}{}%
+\contentsline {section}{\numberline {1.1}连通性相关}{4}{}%
+\contentsline {subsection}{\numberline {1.1.1}双连通分量}{4}{}%
+\contentsline {subsubsection}{\numberline {1.1.1.1}边双连通分量}{4}{}%
+\contentsline {subsubsection}{\numberline {1.1.1.2}点双连通分量}{5}{}%
+\contentsline {subsection}{\numberline {1.1.2}强连通分量}{6}{}%
+\contentsline {subsubsection}{\numberline {1.1.2.1}Kosaraju}{6}{}%
+\contentsline {subsubsection}{\numberline {1.1.2.2}Tarjan}{7}{}%
+\contentsline {section}{\numberline {1.2}最小生成树}{9}{}%
+\contentsline {subsection}{\numberline {1.2.1}Kruskal}{9}{}%
+\contentsline {subsection}{\numberline {1.2.2}Prim}{9}{}%
+\contentsline {section}{\numberline {1.3}最短路}{10}{}%
+\contentsline {subsection}{\numberline {1.3.1}Dijkstra}{10}{}%
+\contentsline {subsection}{\numberline {1.3.2}SPFA}{11}{}%
+\contentsline {section}{\numberline {1.4}树相关}{12}{}%
+\contentsline {subsection}{\numberline {1.4.1}求树的重心}{12}{}%
+\contentsline {subsection}{\numberline {1.4.2}树的直径}{12}{}%
+\contentsline {subsection}{\numberline {1.4.3}重链剖分}{13}{}%
+\contentsline {subsection}{\numberline {1.4.4}虚树}{13}{}%
+\contentsline {section}{\numberline {1.5}差分约束}{14}{}%
+\contentsline {chapter}{\numberline {2}字符串String}{16}{}%
+\contentsline {section}{\numberline {2.1}字符串哈希}{16}{}%
+\contentsline {subsection}{\numberline {2.1.1}双模哈希}{16}{}%
+\contentsline {subsection}{\numberline {2.1.2}（需要补充）}{16}{}%
+\contentsline {section}{\numberline {2.2}后缀数组}{17}{}%
+\contentsline {subsection}{\numberline {2.2.1}（需要补充）}{17}{}%
+\contentsline {subsection}{\numberline {2.2.2}（需要补充）}{19}{}%
+\contentsline {section}{\numberline {2.3}字典树}{20}{}%
+\contentsline {subsection}{\numberline {2.3.1}可持久化字典树}{20}{}%
+\contentsline {subsection}{\numberline {2.3.2}字典树}{21}{}%
+\contentsline {section}{\numberline {2.4}AC自动机}{22}{}%
+\contentsline {section}{\numberline {2.5}KMP}{23}{}%
+\contentsline {section}{\numberline {2.6}Manacher}{24}{}%
+\contentsline {section}{\numberline {2.7}Z函数}{24}{}%
+\contentsline {chapter}{\numberline {3}数学Math}{26}{}%
+\contentsline {section}{\numberline {3.1}线性代数}{26}{}%
+\contentsline {subsection}{\numberline {3.1.1}矩阵运算}{26}{}%
+\contentsline {section}{\numberline {3.2}（需要补充）}{27}{}%
+\contentsline {subsection}{\numberline {3.2.1}（需要补充）}{27}{}%
+\contentsline {section}{\numberline {3.3}数论}{28}{}%
+\contentsline {subsection}{\numberline {3.3.1}欧拉函数}{28}{}%
+\contentsline {subsubsection}{\numberline {3.3.1.1}求欧拉函数}{28}{}%
+\contentsline {subsubsection}{\numberline {3.3.1.2}欧拉筛法}{29}{}%
+\contentsline {subsection}{\numberline {3.3.2}卢卡斯定理}{29}{}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}扩展卢卡斯定理}{29}{}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}卢卡斯定理}{31}{}%
+\contentsline {subsection}{\numberline {3.3.3}莫比乌斯函数}{32}{}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}莫比乌斯函数的欧拉筛法}{32}{}%
+\contentsline {subsection}{\numberline {3.3.4}素数相关}{32}{}%
+\contentsline {subsubsection}{\numberline {3.3.4.1}Miller-Rabin 素性测试}{32}{}%
+\contentsline {subsubsection}{\numberline {3.3.4.2}素数的线性筛法}{33}{}%
+\contentsline {subsection}{\numberline {3.3.5}中国剩余定理}{33}{}%
+\contentsline {subsection}{\numberline {3.3.6}杜教筛}{34}{}%
+\contentsline {subsection}{\numberline {3.3.7}扩展欧几里得算法}{35}{}%
+\contentsline {subsection}{\numberline {3.3.8}Pollard-Rho}{35}{}%
+\contentsline {subsection}{\numberline {3.3.9}数论分块}{37}{}%
+\contentsline {section}{\numberline {3.4}多项式}{38}{}%
+\contentsline {subsection}{\numberline {3.4.1}快速傅里叶变换}{38}{}%
+\contentsline {subsubsection}{\numberline {3.4.1.1}快速傅里叶变换}{38}{}%
+\contentsline {subsubsection}{\numberline {3.4.1.2}快速傅里叶变换}{39}{}%
+\contentsline {subsection}{\numberline {3.4.2}快速沃尔什变换}{40}{}%
+\contentsline {subsection}{\numberline {3.4.3}（需要补充）}{42}{}%
+\contentsline {section}{\numberline {3.5}高精度计算}{44}{}%
+\contentsline {section}{\numberline {3.6}快速幂}{46}{}%
+\contentsline {section}{\numberline {3.7}高斯消元}{46}{}%
+\contentsline {chapter}{\numberline {4}数据结构Data Structure}{48}{}%
+\contentsline {section}{\numberline {4.1}平衡树}{48}{}%
+\contentsline {subsection}{\numberline {4.1.1}FHQ-Treap}{48}{}%
+\contentsline {subsection}{\numberline {4.1.2}Splay}{49}{}%
+\contentsline {section}{\numberline {4.2}动态树}{51}{}%
+\contentsline {subsection}{\numberline {4.2.1}Link-Cut Tree}{51}{}%
+\contentsline {section}{\numberline {4.3}树状数组}{53}{}%
+\contentsline {subsection}{\numberline {4.3.1}树状数组1}{53}{}%
+\contentsline {subsection}{\numberline {4.3.2}树状数组2}{53}{}%
+\contentsline {section}{\numberline {4.4}线段树}{54}{}%
+\contentsline {subsection}{\numberline {4.4.1}可持久化线段树}{54}{}%
+\contentsline {subsubsection}{\numberline {4.4.1.1}可持久化线段树1}{54}{}%
+\contentsline {subsubsection}{\numberline {4.4.1.2}可持久化线段树2}{55}{}%
+\contentsline {subsection}{\numberline {4.4.2}李超线段树}{57}{}%
+\contentsline {subsection}{\numberline {4.4.3}线段树1}{59}{}%
+\contentsline {subsection}{\numberline {4.4.4}线段树1}{59}{}%
+\contentsline {subsection}{\numberline {4.4.5}线段树合并}{61}{}%
+\contentsline {subsection}{\numberline {4.4.6}线段树分裂}{64}{}%
+\contentsline {section}{\numberline {4.5}并查集}{65}{}%
+\contentsline {section}{\numberline {4.6}ST表}{66}{}%
+\contentsline {chapter}{\numberline {5}杂项Misc}{67}{}%
+\contentsline {section}{\numberline {5.1}离线算法}{67}{}%
+\contentsline {subsection}{\numberline {5.1.1}莫队}{67}{}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}莫队}{67}{}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}（需要补充）}{67}{}%
+\contentsline {section}{\numberline {5.2}珂朵莉树}{70}{}%

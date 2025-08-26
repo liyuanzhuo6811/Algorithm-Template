@@ -1,3 +1,4 @@
+// {"name": "（需要补充）", "intro": "（需要补充）"}
 #include <cstring>
 #include <iostream>
 #define f(x) (x / 3) + (x % 3 == 1 ? 0 : cd)          // f(x) 表示原串中后缀 x 在新串中的位置

@@ -1,6 +1,9 @@
+// {"name": "矩阵运算", "intro": "矩阵的基本运算。"}
 #include <bits/stdc++.h>
 using namespace std;
-struct mat {
+const int MOD = 1e9 + 7;
+template<int sz>struct mat {
+    using LL = long long;
     LL a[sz][sz];
     mat() { memset(a, 0, sizeof a); }
     mat operator-(const mat &T) const {

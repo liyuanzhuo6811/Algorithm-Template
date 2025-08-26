@@ -1,3 +1,4 @@
+// {"name": "线段树1", "intro": "支持区间修改，区间查询。支持区间乘。"}
 #include <cstdio>
 #include <iostream>
 #define int long long

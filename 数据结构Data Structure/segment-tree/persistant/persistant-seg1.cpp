@@ -1,3 +1,4 @@
+// {"name": "可持久化线段树1", "intro": "支持单点修改，区间查询，版本回滚的可持久化线段树。"}
 #include <cstdio>
 using namespace std;
 const int N = 1e6 + 5;

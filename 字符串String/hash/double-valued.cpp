@@ -1,5 +1,6 @@
+// {"name": "双模哈希", "intro": "利用两个模数同时计算哈希，防止哈希碰撞。"}
 #include <cstring>
-#include <iostream>
+#include <string>
 using std::string;
 using ull = unsigned long long;
 ull base = 131, mod1 = 212370440130137957, mod2 = 1e9 + 7;

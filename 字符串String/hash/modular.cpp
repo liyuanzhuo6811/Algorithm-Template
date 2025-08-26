@@ -1,5 +1,6 @@
+// {"name": "（需要补充）", "intro": "（需要补充）"}
 #include <cstring>
-#include <iostream>
+#include <string>
 using std::string;
 constexpr int M = 1e9 + 7;
 constexpr int B = 233;

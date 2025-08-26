@@ -1,3 +1,4 @@
+// {"name": "Kruskal", "intro": "利用Kruskal算法求最小生成树。时间复杂度为排序和并查集。"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e6 + 5;

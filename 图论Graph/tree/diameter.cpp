@@ -1,7 +1,8 @@
+// {"name": "树的直径", "intro": "求出一棵树的直径。这是贪心的方法，不能处理负权。"}
 #include <bits/stdc++.h>
 constexpr int N = 10000 + 10;
 int n, c, d[N];
-vector<int> E[N];
+std::vector<int> E[N];
 void dfs(int u, int fa) {
     for (int v : E[u]) {
         if (v == fa) continue;

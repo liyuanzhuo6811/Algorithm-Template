@@ -1,4 +1,4 @@
-import os
+import os, json
 print(os.getcwd())
 titf = ["chapter", "section", "subsection", "subsubsection", "paragraph", "subparagraph"]
 tex = open("work/tex/all-pdf.tex", "w", encoding="utf8")
@@ -48,6 +48,8 @@ tex.write("""\\documentclass[9pt, a4paper, oneside]{book}
     frame=topline,
     framesep=1em
 }
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 \\begin{document}
 \\maketitle
 \\tableofcontents
@@ -65,6 +67,8 @@ def gci(filepath, rootpath):
     # print(nowc - totc)
     # print(fi)
     red = filepath.split("/")[-1]
+    if ".intro" in files:
+        red = open(os.path.join(filepath, ".intro"), encoding="utf8").read()
     if nowc > totc:
         tex.write(f"\\{titf[nowc - totc - 1]}{{{red}}}\n")
 
@@ -76,9 +80,21 @@ def gci(filepath, rootpath):
         fi_d = os.path.join(filepath, fi)
         if not os.path.isdir(fi_d):
             if fi_d[-4:] == ".cpp":
-                tex.write(f"\\{titf[nowc - totc]}{{{fi.replace("_", "\\_")}}}\n")
                 with open(fi_d, encoding="utf8") as tmp:
                     code = tmp.read()
+                    brief = title = fi.replace("_", "\\_")
+                    if code[:2] == "//":
+                        fir = code.split("\n")[0]
+                        code = "\n".join(code.split("\n")[1:])
+                        fir = fir.split("//")[1]
+                        fir = fir.replace("\\", "\\\\")
+                        print(fir)
+                        dc = json.loads(fir)
+                        title = dc["name"]
+                        brief = dc["intro"]
+                    
+                    tex.write(f"\\{titf[nowc - totc]}{{{title}}}\n")
+                    tex.write(brief + "\n")
                     tex.write("\\begin{lstlisting}[language={C++}]\n")
                     tex.write(code)
                     tex.write("\\end{lstlisting}\n")

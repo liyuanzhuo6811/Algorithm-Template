@@ -1,3 +1,4 @@
+// {"name": "（需要补充）", "intro": "（需要补充）"}
 #include <algorithm>
 #include <cstdio>
 using namespace std;
@@ -6,18 +7,18 @@ typedef long long ll;
 template <typename T> inline void gm(T *&bas, int siz, T *&op) { op = bas, bas += siz; }
 #define pus(x) (sa[cur[a[x]]--] = x)
 #define pul(x) (sa[cur[a[x]]++] = x)
-#define inds(lms)                                                                                                      \
-    for (int i = 1; i <= n; i++) sa[i] = -1;                                                                           \
-    for (int i = 1; i <= n; i++) sum[i] = 0;                                                                           \
-    for (int i = 1; i <= n; i++) sum[a[i]]++;                                                                          \
-    for (int i = 1; i <= n; i++) sum[i] += sum[i - 1];                                                                 \
-    for (int i = 1; i <= n; i++) cur[i] = sum[i];                                                                      \
-    for (int i = m; i >= 1; i--) pus(lms[i]);                                                                          \
-    for (int i = 1; i <= n; i++) cur[i] = sum[i - 1] + 1;                                                              \
-    for (int i = 1; i <= n; i++)                                                                                       \
-        if (sa[i] > 1 && !tp[sa[i] - 1]) pul(sa[i] - 1);                                                               \
-    for (int i = 1; i <= n; i++) cur[i] = sum[i];                                                                      \
-    for (int i = n; i >= 1; i--)                                                                                       \
+#define inds(lms)                                         \
+    for (int i = 1; i <= n; i++) sa[i] = -1;              \
+    for (int i = 1; i <= n; i++) sum[i] = 0;              \
+    for (int i = 1; i <= n; i++) sum[a[i]]++;             \
+    for (int i = 1; i <= n; i++) sum[i] += sum[i - 1];    \
+    for (int i = 1; i <= n; i++) cur[i] = sum[i];         \
+    for (int i = m; i >= 1; i--) pus(lms[i]);             \
+    for (int i = 1; i <= n; i++) cur[i] = sum[i - 1] + 1; \
+    for (int i = 1; i <= n; i++)                          \
+        if (sa[i] > 1 && !tp[sa[i] - 1]) pul(sa[i] - 1);  \
+    for (int i = 1; i <= n; i++) cur[i] = sum[i];         \
+    for (int i = n; i >= 1; i--)                          \
         if (sa[i] > 1 && tp[sa[i] - 1]) pus(sa[i] - 1);
 int sa[N], sum[N], cur[N], rk[N], A_bas[N << 4], *A_t;
 inline void sais(int n, int *a) {

@@ -1,3 +1,4 @@
+// {"name": "Z函数", "intro": "（需要补充）"}
 #include <cstring>
 #include <iostream>
 #include <vector>

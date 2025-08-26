@@ -1,3 +1,4 @@
+// {"name": "SPFA", "intro": "利用SPFA求最短路。时间复杂度不稳定（意思就是复杂度按照 $O(n^2)$ 算就对了），支持负权，可以在 $O(nm)$ 的时间内找到负环并且判断。"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 5;

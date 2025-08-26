@@ -1,3 +1,4 @@
+// {"name": "莫队", "intro": "静态查询且离线下在 $O(n \sqrt n)$ 的复杂度内求解一类区间问题。"}
 void move(int pos, int sign) { ... }
 int unit;
 struct node {

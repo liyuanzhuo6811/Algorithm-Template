@@ -1,3 +1,4 @@
+// {"name": "Prim", "intro": "利用Prim算法求最小生成树。时间复杂度为堆。"}
 #include <cstring>
 #include <iostream>
 #include <queue>

@@ -1,3 +1,4 @@
+// {"name": "快速沃尔什变换", "intro": "（需要补充）"}
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/hash_policy.hpp>

@@ -1,3 +1,4 @@
+// {"name": "虚树", "intro": "二次排序法建虚树。"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 5;

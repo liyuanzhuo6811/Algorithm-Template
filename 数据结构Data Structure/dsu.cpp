@@ -1,3 +1,4 @@
+// {"name": "并查集", "intro": "（需要补充，我不理解下面两个函数）"}
 #include <bits/stdc++.h>
 using namespace std;
 struct dsu {
@@ -12,7 +13,7 @@ struct dsu {
         size[x] += size[y];
     }
     void erase(size_t x) { --size[find(x)], pa[x] = x; }
-    void dsu::move(size_t x, size_t y) {
+    void move(size_t x, size_t y) {
         auto fx = find(x), fy = find(y);
         if (fx == fy) return;
         pa[x] = fy;

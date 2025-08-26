@@ -1,3 +1,4 @@
+// {"name": "Link-Cut Tree", "intro": "（需要补充）"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 3e5 + 5;

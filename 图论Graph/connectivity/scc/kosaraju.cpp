@@ -1,8 +1,8 @@
-// g 是原图，g2 是反图
+// {"name": "Kosaraju", "intro": "利用反图求强连通分量。"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e6 + 5;
-vector<vector<int>> g, g2;
+vector<vector<int>> g, g2; // g 是原图，g2 是反图
 vector<int> s;
 bool vis[N];
 int sccCnt, n, color[N];

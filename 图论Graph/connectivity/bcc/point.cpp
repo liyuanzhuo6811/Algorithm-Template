@@ -1,3 +1,4 @@
+// {"name": "点双连通分量", "intro": "在 $O(n)$ 的时间内求出点双连通分量。"}
 #include <cstdio>
 #include <iostream>
 #include <vector>

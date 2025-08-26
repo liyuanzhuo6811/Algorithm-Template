@@ -10,3 +10,4 @@ BreakBeforeConceptDeclarations: Allowed
 ColumnLimit: 120
 IndentWidth: 4
 RequiresClausePosition: SingleLine
+PenaltyBreakComment: 1000000000

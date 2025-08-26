@@ -1,5 +1,5 @@
+// {"name": "莫比乌斯函数的欧拉筛法", "intro": "计算在 $[1, n]$ 内所有数的莫比乌斯函数值。"}
 #include <bitset>
-#include <iostream>
 #include <vector>
 using std::bitset;
 using std::vector;

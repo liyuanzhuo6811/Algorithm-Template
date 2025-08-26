@@ -1,3 +1,4 @@
+// {"name": "高精度计算", "intro": "对大整数进行计算。"}
 #include <cstdio>
 #include <cstring>
 constexpr int LEN = 1004;

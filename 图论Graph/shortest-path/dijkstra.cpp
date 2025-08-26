@@ -1,3 +1,4 @@
+// {"name": "Dijkstra", "intro": "利用Dijkstra求最短路。时间复杂度为稳定的 $O(m \log n)$，不能有负权。"}
 struct edge {
     int v, w;
 };

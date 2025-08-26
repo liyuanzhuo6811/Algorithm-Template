@@ -1,3 +1,4 @@
+// {"name": "高斯消元", "intro": "求线性方程组。"}
 #include <algorithm>
 #include <cmath>
 #include <cstdio>

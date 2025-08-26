@@ -1,3 +1,4 @@
+// {"name": "珂朵莉树", "intro": "一个题只要数据随机，那它就一定不是正经题。——aaa12321"}
 #include <algorithm>
 #include <cstdio>
 #include <iostream>

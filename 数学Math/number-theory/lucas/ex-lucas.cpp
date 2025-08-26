@@ -1,3 +1,4 @@
+// {"name": "扩展卢卡斯定理", "intro": "（需要补充）"}
 #include <iostream>
 #include <vector>
 

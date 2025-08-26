@@ -1,3 +1,4 @@
+// {"name": "杜教筛", "intro": "在 $O(n^{\frac{2}{3}})$ 的复杂度内求积性函数前缀和。"}
 #include <cstdio>
 #include <iostream>
 #include <map>

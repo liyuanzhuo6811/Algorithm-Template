@@ -1,8 +1,6 @@
+// {"name": "欧拉筛法", "intro": "在 $O(n)$ 的时间内求出 $[1, n]$ 内的所有数的欧拉函数值。"}
 #include <bitset>
-#include <iostream>
-#include <vector>
 using std::bitset;
-using std::vector;
 const int N = 1e7 + 5;
 bitset<N> not_prime;
 int prime[N], pcnt, phi[N];

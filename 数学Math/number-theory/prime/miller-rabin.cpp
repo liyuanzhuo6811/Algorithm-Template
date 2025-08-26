@@ -1,3 +1,4 @@
+// {"name": "Miller-Rabin 素性测试", "intro": "计算一个数是素数的概率。要想保证在 $2^64$ 内不出错，需要七个数，$2,325,9375,28178,450775,9780504,1795265022$。"}
 #include <bits/stdc++.h>
 using namespace std;
 bool millerRabin(int n) {

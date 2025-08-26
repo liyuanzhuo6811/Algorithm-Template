@@ -1,3 +1,4 @@
+// {"name": "线段树分裂", "intro": "（需要补充）"}
 #include <cstdio>
 #include <iostream>
 #define int long long

@@ -1,5 +1,6 @@
+// {"name": "重链剖分", "intro": "对树进行重链剖分，可以配合线段树进行链上修改。"}
 #include <bits/stdc++.h>
-using namepace std;
+using namespace std;
 const int N = 1e5 + 5;
 int n;
 vector<int> g[N];

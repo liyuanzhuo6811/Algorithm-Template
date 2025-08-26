@@ -1,3 +1,4 @@
+// {"name": "中国剩余定理", "intro": "求解线性同余方程组。"}
 #include <iostream>
 using LL = long long;
 LL ex_gcd(LL a, LL b, LL &x, LL &y) {

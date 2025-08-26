@@ -1,5 +1,5 @@
+// {"name": "AC自动机", "intro": "（需要补充）"}
 #include <cstring>
-#include <iostream>
 #include <queue>
 #include <vector>
 using namespace std;

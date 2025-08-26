@@ -1,3 +1,4 @@
+// {"name": "可持久化字典树", "intro": "支持版本回滚的字典树。"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 6e5 + 5, H = 28;

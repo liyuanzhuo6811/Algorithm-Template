@@ -1,3 +1,4 @@
+// {"name": "（需要补充）", "intro": "（需要补充）"}
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;

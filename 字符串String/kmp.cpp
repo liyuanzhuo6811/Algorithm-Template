@@ -1,3 +1,4 @@
+// {"name": "KMP", "intro": "单模式串进行 $O(1)$ 的匹配。"}
 #include <cstring>
 #include <iostream>
 #include <vector>

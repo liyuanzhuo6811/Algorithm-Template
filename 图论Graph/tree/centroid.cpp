@@ -1,3 +1,4 @@
+// {"name": "求树的重心", "intro": "求出一棵树所有的重心。"}
 int size[MAXN], weight[MAXN], centroid[2];
 void GetCentroid(int cur, int fa) {
     size[cur] = 1, weight[cur] = 0;

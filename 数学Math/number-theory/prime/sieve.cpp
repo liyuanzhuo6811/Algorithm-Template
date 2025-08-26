@@ -1,3 +1,4 @@
+// {"name": "素数的线性筛法", "intro": "筛所有素数。"}
 #include <bitset>
 #include <iostream>
 #include <vector>

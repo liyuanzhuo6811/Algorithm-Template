@@ -1,3 +1,4 @@
+// {"name": "ST表", "intro": "在 $O(n \log n)$ 的时间复杂度预处理，并且在 $O(1)$ 的时间内查询。"}
 #include <cmath>
 #include <cstdio>
 #include <iostream>

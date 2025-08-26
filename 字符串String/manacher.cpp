@@ -1,3 +1,4 @@
+// {"name": "Manacher", "intro": "求出字符串中的最长回文字串。"}
 #include <cstring>
 #include <iostream>
 using namespace std;

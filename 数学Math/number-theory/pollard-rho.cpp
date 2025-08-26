@@ -1,3 +1,4 @@
+// {"name": "Pollard-Rho", "intro": "在相对于暴力下较快地分解质因数的方法。"}
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>

@@ -1,3 +1,4 @@
+// {"name": "线段树1", "intro": "支持区间修改，区间查询。"}
 #include <iostream>
 using namespace std;
 using ll = long long;

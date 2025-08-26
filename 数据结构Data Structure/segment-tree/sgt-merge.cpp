@@ -1,3 +1,4 @@
+// {"name": "线段树合并", "intro": "线段树合并可以做什么呢？它可以把两棵线段树合并起来。"}
 #include <cstdio>
 #include <iostream>
 using namespace std;

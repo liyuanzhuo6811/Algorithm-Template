@@ -1,3 +1,4 @@
+// {"name": "Splay", "intro": "带旋平衡树。主要用于LCT。"}
 const int N = 1e5 + 5;
 int rt, siz[N], ch[N][2], val[N], tot, fa[N], cnt[N];
 void pushup(int p) { siz[p] = siz[ch[p][0]] + siz[ch[p][1]] + cnt[p]; }

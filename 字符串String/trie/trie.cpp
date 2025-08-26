@@ -1,5 +1,5 @@
+// {"name": "字典树", "intro": "空间复杂度 $O(n|S|)$，时间复杂度 $O(n|S|)$ 地解决一些字符串问题。"}
 #include <cstring>
-#include <iostream>
 using namespace std;
 struct trie {
     int son[100000][26], cnt;

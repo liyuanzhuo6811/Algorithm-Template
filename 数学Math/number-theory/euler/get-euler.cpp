@@ -1,3 +1,4 @@
+// {"name": "求欧拉函数", "intro": "在 $O(\log n)$ 的时间复杂度内求出一个数的欧拉函数。"}
 #include <cmath>
 int euler_phi(int n) {
     int ans = n;

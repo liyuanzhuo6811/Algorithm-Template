@@ -1,17 +1,10 @@
+// {"name": "（需要补充）", "intro": "（需要补充）"}
 #include <algorithm>
-#include <bitset>
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
-#include <iomanip>
-#include <iostream>
-#include <map>
-#include <queue>
-#include <set>
-#include <string>
-#include <vector>
 using namespace std;
 int read() {
     int x = 0, f = 1;

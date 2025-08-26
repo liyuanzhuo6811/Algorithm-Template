@@ -1,3 +1,4 @@
+// {"name": "Tarjan", "intro": "利用Tarjan算法求强连通分量。"}
 #include <algorithm>
 #include <cstdio>
 #include <cstring>

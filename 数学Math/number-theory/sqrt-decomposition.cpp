@@ -1,4 +1,4 @@
-#include <iostream>
+// {"name": "数论分块", "intro": "求 $\sum \lfloor \frac{n}{i} \rfloor$。"}
 using ll = long long;
 ll get_sum(int l, int r) { return r - l + 1; }
 ll calc(int n) {

@@ -1,3 +1,4 @@
+// {"name": "李超线段树", "intro": "在一个平面上添加和修改线段，查询某个坐标位置的最高/最低线段。"}
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;

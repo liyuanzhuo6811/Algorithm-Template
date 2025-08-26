@@ -1,3 +1,4 @@
+// {"name": "（需要补充）", "intro": "（需要补充）"}
 #include <cmath>
 #include <cstring>
 #include <iostream>
