@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int MOD = 1e9 + 7;
-template<int sz>struct mat {
+template <int sz> struct mat {
     using LL = long long;
     LL a[sz][sz];
     mat() { memset(a, 0, sizeof a); }
