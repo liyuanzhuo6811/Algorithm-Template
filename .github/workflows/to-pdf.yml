@@ -28,6 +28,7 @@ jobs:
         python work/makelatex.py
         cd work/tex
         xelatex all-pdf.tex
+        xelatex all-pdf.tex
 
     - name: Commit
       uses: stefanzweifel/git-auto-commit-action@v4
