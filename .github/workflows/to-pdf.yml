@@ -29,12 +29,13 @@ jobs:
         cd work/tex
         xelatex all-pdf.tex
         xelatex all-pdf.tex
+        cd ../../
 
-    - name: Commit
-      uses: stefanzweifel/git-auto-commit-action@v4
+    - name: Create Release and Upload Assets
+      uses: softprops/action-gh-release@v1
       with:
-        branch: PDF
-        file_pattern: work/tex/all-pdf.pdf
-        commit_message: "Make the code to PDF."
-        create_branch: true
+        files: |
+          work/tex/all-pdf.pdf
+        body: 新的PDF版本。更改内容详见Commit。
+        token: ${{ secrets.ACCESS_TOKEN }}
 
