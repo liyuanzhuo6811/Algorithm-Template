@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+
+name: Release Test
+jobs:
+  topdf:
+    name: Make PDF
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        ref: main
+
+    - name: Create Release and Upload Assets
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          work/tex/all-pdf.pdf
+        body: 新的PDF版本。更改内容详见Commit。
+        token: ${{ github.ACCESS_TOKEN }}
+
