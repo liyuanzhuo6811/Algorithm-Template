@@ -19,5 +19,6 @@ jobs:
         files: |
           work/tex/all-pdf.pdf
         body: 新的PDF版本。更改内容详见Commit。
+        tag_name: main
         token: ${{ github.ACCESS_TOKEN }}
 
