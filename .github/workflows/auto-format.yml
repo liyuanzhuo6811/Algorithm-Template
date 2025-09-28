@@ -34,15 +34,14 @@ jobs:
         force: true
 
     - name: Pull Request
-      uses: peter-evans/create-pull-request@v3
+      uses: peter-evans/create-pull-request@v7
       with: 
         token: ${{ secrets.ACCESS_TOKEN }}
         title: 自动格式化
         body: |
           自动格式化代码
-        committer: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
-        author: liyuanzhuo6811 <liyuanzhuo6811@outlook.com>
         assignees: liyuanzhuo6811,real01bit,lotus-grass
         reviewers: liyuanzhuo6811,real01bit,lotus-grass
         branch: formatted
         base: main
+        branch-suffix: timestamp
