@@ -1,4 +1,4 @@
-// {"name": "快速沃尔什变换", "intro": "（需要补充）"}
+// {"name": "快速沃尔什变换", "intro": "到时候看见一个高维问题是数数直接超上来——lhc0707"}
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/hash_policy.hpp>
@@ -27,7 +27,7 @@ using pdl = pair<db, ll>;
 using pdi = pair<db, int>;
 using pil = pair<int, ll>;
 using pii = pair<int, int>;
-using ull = unsigned ll;
+using ull = unsigned long long;
 using uint = unsigned int;
 inline lint read() {
     lint x = 0;
