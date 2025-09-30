@@ -40,8 +40,6 @@ jobs:
         title: 自动格式化
         body: |
           自动格式化代码
-        assignees: liyuanzhuo6811,real01bit,lotus-grass
-        reviewers: liyuanzhuo6811,real01bit,lotus-grass
         branch: formatted
         base: main
         branch-suffix: timestamp

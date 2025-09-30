@@ -1,4 +1,4 @@
-// {"name": "（需要补充）", "intro": "（需要补充）"}
+// {"name": "SA-IS", "intro": "$O(n)$ 时间内求 SA。"}
 #include <algorithm>
 #include <cstdio>
 using namespace std;

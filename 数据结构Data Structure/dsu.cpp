@@ -1,4 +1,4 @@
-// {"name": "并查集", "intro": "（需要补充，我不理解下面两个函数）"}
+// {"name": "并查集", "intro": "可撤销并查集"}
 #include <bits/stdc++.h>
 using namespace std;
 struct dsu {

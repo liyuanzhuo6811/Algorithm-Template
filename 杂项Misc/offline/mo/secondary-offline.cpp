@@ -1,4 +1,4 @@
-// {"name": "（需要补充）", "intro": "（需要补充）"}
+// {"name": "莫队二次离线", "intro": "莫队套莫队"}
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
