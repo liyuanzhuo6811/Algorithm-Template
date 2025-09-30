@@ -26,24 +26,23 @@
 }
 \date{最后一次修改：\today}
 \newfontfamily\firacode{FiraCode-Regular.ttf}
-\definecolor{stringgreen}{rgb}{0,0.66,0}
 \lstset{
     language=C++,
     basicstyle=\firacode\small,
     breaklines=true,
     keywordstyle=\bfseries\color{red},
-    stringstyle=\color{stringgreen}\ttfamily,
+    stringstyle=\color{green}\ttfamily,
     morekeywords={},
     emph={self},
     emphstyle=\bfseries,
     commentstyle=\itshape,
+    stringstyle=\bfseries,
     columns=flexible,
     numbers=left,
     numbersep=2em,
     numberstyle=\footnotesize,
     frame=topline,
-    framesep=1em,
-    columns=flexible
+    framesep=1em
 }
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
@@ -704,6 +703,7 @@ typedef long long ll;
 template <typename T> inline void gm(T *&bas, int siz, T *&op) { op = bas, bas += siz; }
 #define pus(x) (sa[cur[a[x]]--] = x)
 #define pul(x) (sa[cur[a[x]]++] = x)
+// clang-format off
 #define inds(lms)                                         \
     for (int i = 1; i <= n; i++) sa[i] = -1;              \
     for (int i = 1; i <= n; i++) sum[i] = 0;              \
@@ -717,6 +717,7 @@ template <typename T> inline void gm(T *&bas, int siz, T *&op) { op = bas, bas +
     for (int i = 1; i <= n; i++) cur[i] = sum[i];         \
     for (int i = n; i >= 1; i--)                          \
         if (sa[i] > 1 && tp[sa[i] - 1]) pus(sa[i] - 1);
+// clang-format on
 int sa[N], sum[N], cur[N], rk[N], A_bas[N << 4], *A_t;
 inline void sais(int n, int *a) {
     int *tp, *p;
@@ -978,7 +979,7 @@ int main() { return 0; }\end{lstlisting}
 #include <bits/stdc++.h>
 using namespace std;
 const int MOD = 1e9 + 7;
-template<int sz>struct mat {
+template <int sz> struct mat {
     using LL = long long;
     LL a[sz][sz];
     mat() { memset(a, 0, sizeof a); }
@@ -3035,4 +3036,7 @@ signed main() {
     }
     return 0;
 }\end{lstlisting}
+\chapter{附录}
+\input{thanks.tex}
+\input{con.tex}
 \end{document}

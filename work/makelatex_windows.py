@@ -100,4 +100,9 @@ def gci(filepath, rootpath):
                     tex.write("\\end{lstlisting}\n")
 
 gci(os.getcwd(), os.getcwd())
-tex.write("\\end{document}")
+tex.write("""
+\chapter{附录}
+\input{thanks.tex}
+\input{con.tex}
+\end{document}
+""")
