@@ -9,6 +9,7 @@ tex.write("""\\documentclass[9pt, a4paper, oneside]{book}
 \\usepackage{color}
 \\usepackage{geometry}
 \\usepackage{titlesec}
+\\usepackage{graphicx}
 
 \\titleformat{\\chapter}
 {\\normalfont\\Large\\bfseries}{第 \\thechapter 部分}{1em}{}
@@ -101,8 +102,6 @@ def gci(filepath, rootpath):
 
 gci(os.getcwd(), os.getcwd())
 tex.write("""
-\chapter{附录}
-\input{thanks.tex}
-\input{con.tex}
+\input{cont.tex}
 \end{document}
 """)

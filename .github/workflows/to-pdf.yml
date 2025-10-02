@@ -25,6 +25,7 @@ jobs:
     
     - name: Make PDF
       run: |
+        python work/get_contribute.py
         python work/makelatex.py
         cd work/tex
         xelatex all-pdf.tex
