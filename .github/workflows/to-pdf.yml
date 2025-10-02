@@ -25,6 +25,7 @@ jobs:
     
     - name: Make PDF
       run: |
+        pip install requests
         python work/get_contribute.py
         python work/makelatex.py
         cd work/tex
