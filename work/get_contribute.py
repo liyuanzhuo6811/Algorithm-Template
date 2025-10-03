@@ -54,6 +54,6 @@ for prs in p:
     avt = open(avt_path, "wb")
     avt.write(img.content)
     avt.close()
-    os.system(f"bmeps -c {avt_path} work/tex/images/{prs["id"]}.eps")
+    os.system(f"bitmap2pp -l eps.image {avt_path}")
     con.write(gen(prs["login"], prs["id"], prs["contributions"]))
     time.sleep(1)

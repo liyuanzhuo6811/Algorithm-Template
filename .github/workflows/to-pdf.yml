@@ -12,7 +12,22 @@ jobs:
       with:
         token: ${{ secrets.ACCESS_TOKEN }}
         ref: main
-
+    - name: Set up BMPP
+      run: |
+        mkdir bmpp_build
+        cd bmpp_build
+        wget https://master.dl.sourceforge.net/project/dktools/dktools/dktools-4.39.0/dktools-4.39.0.tar.gz
+        tar -zxvf dktools-4.39.0.tar.gz
+        cd dktools-4.39.0
+        sudo scripts/debian/deb-prepare
+        scripts/debian/deb-build
+        cd ../dktools-debian-pkg
+        ./install_cli
+        ./install_rescue
+        ./install_dktools
+        cd ../
+        touch .makelatex-ignore
+        cd ../
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -23,6 +38,7 @@ jobs:
         sudo apt update
         sudo apt install texlive-full -y
     
+
     - name: Make PDF
       run: |
         pip install requests
