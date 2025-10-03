@@ -16,15 +16,15 @@ jobs:
       run: |
         mkdir bmpp_build
         cd bmpp_build
-        wget https://master.dl.sourceforge.net/project/dktools/dktools/dktools-4.39.0/dktools-4.39.0.tar.gz
-        tar -zxvf dktools-4.39.0.tar.gz
-        cd dktools-4.39.0
-        sudo scripts/debian/deb-prepare
-        scripts/debian/deb-build
-        cd ../dktools-debian-pkg
-        ./install_cli
-        ./install_rescue
-        ./install_dktools
+        wget https://master.dl.sourceforge.net/project/dktools/dktools/dktools-4.39.0/dktools-4.39.0.tar.gz > /dev/null
+        tar -zxvf dktools-4.39.0.tar.gz > /dev/null
+        cd dktools-4.39.0 > /dev/null
+        sudo scripts/debian/deb-prepare > /dev/null
+        scripts/debian/deb-build > /dev/null
+        cd ../dktools-debian-pkg 
+        sudo ./install_cli 
+        sudo ./install_rescue
+        sudo ./install_dktools
         cd ../
         touch .makelatex-ignore
         cd ../
