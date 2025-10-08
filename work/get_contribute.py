@@ -47,7 +47,7 @@ def gen(username, userid, conts):
 for prs in p:
     print(prs)
     print(prs["login"], prs["avatar_url"])
-    img = requests.get(prs["avatar_url"], headers=head, timeout=5)
+    img = requests.get(prs["avatar_url"], headers=head, timeout=5, verify=False)
     suf = image_suffix.get(img.content[0], "jpg")
     avt_path = f"work/tex/images/{prs["id"]}.{suf}"
     print(avt_path)
