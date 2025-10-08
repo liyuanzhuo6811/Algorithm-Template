@@ -19,9 +19,10 @@ jobs:
         cd dktools-debian-pkg
         chmod +x install* deb-prepare show-os-release
         sudo ./deb-prepare
-        sudo ./install-rescue
-        sudo ./install-cli
-        sudo ./install-dktools
+        sudo apt install libssl3t64
+        sudo ./install-rescue || sudo apt install -f && sudo ./install-rescue
+        sudo ./install-cli || sudo apt install -f && sudo ./install-cli
+        sudo ./install-dktools || sudo apt install -f && sudo ./install-dktools
         cd ../../
     - name: Set up Python
       uses: actions/setup-python@v5
