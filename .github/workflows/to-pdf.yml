@@ -19,8 +19,8 @@ jobs:
         cd dktools-debian-pkg
         chmod +x install* deb-prepare show-os-release
         sudo ./deb-prepare
-        sudo ./install-cli
         sudo ./install-rescue
+        sudo ./install-cli
         sudo ./install-dktools
         cd ../../
     - name: Set up Python
