@@ -5,7 +5,7 @@ name: Make PDF
 jobs:
   topdf:
     name: Make PDF
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - name: Checkout
       uses: actions/checkout@v5
@@ -14,22 +14,15 @@ jobs:
         ref: main
     - name: Set up BMPP
       run: |
-        mkdir bmpp_build
-        cd bmpp_build
-        wget https://master.dl.sourceforge.net/project/dktools/dktools/dktools-4.39.0/dktools-4.39.0.tar.gz > /dev/null
-        tar -zxvf dktools-4.39.0.tar.gz > /dev/null
-        cd dktools-4.39.0
-        sudo scripts/debian/deb-prepare > /dev/null
-        scripts/debian/deb-build > /dev/null
-        cd ../dktools-debian-pkg 
-        ls -al
-        pwd
-        sudo ./install_cli 
-        sudo ./install_rescue
-        sudo ./install_dktools
-        cd ../
-        touch .makelatex-ignore
-        cd ../
+        cd work
+        tar -zxvf dktools.tar.gz
+        cd dktools-debian-pkg
+        chmod +x install* deb-prepare
+        sudo ./deb-prepare
+        sudo ./install-cli
+        sudo ./install-rescue
+        sudo ./install-dktools
+        cd ../../
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
