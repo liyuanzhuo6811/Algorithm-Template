@@ -33,10 +33,10 @@ image_suffix = {
     0   : "heic",
     111 : "tif"
 }
-def gen(username, userid, conts):
+def gen(username, userid, conts, suf):
     return f"""\\begin{{figure}}[!htpb]
 \\begin{{minipage}}{{0.1\\textwidth}}
-\\includegraphics[width=\\textwidth]{{images/{userid}.eps}}
+\\includegraphics[width=\\textwidth]{{images/{userid}.{suf}}}
 \\end{{minipage}}
 \\hfill
 \\begin{{minipage}}{{0.8\\textwidth}}
@@ -55,5 +55,5 @@ for prs in p:
     avt.write(img.content)
     avt.close()
     os.system(f"bitmap2pp -l eps.image {avt_path}")
-    con.write(gen(prs["login"], prs["id"], prs["contributions"]))
+    con.write(gen(prs["login"], prs["id"], prs["contributions"], suf))
     time.sleep(1)

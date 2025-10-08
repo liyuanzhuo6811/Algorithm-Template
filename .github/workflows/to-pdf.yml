@@ -18,11 +18,10 @@ jobs:
         tar -zxvf dktools.tar.gz
         cd dktools-debian-pkg
         chmod +x install* deb-prepare show-os-release
-        sudo ./deb-prepare
-        sudo apt install libssl3t64
-        sudo ./install-rescue || sudo apt install -f && sudo ./install-rescue
-        sudo ./install-cli || sudo apt install -f && sudo ./install-cli
-        sudo ./install-dktools || sudo apt install -f && sudo ./install-dktools
+        sudo ./deb-prepare > /dev/null
+        sudo ./install-rescue > /dev/null
+        sudo ./install-cli > /dev/null
+        sudo ./install-dktools > /dev/null
         cd ../../
     - name: Set up Python
       uses: actions/setup-python@v5
