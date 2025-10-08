@@ -12,17 +12,17 @@ jobs:
       with:
         token: ${{ secrets.ACCESS_TOKEN }}
         ref: main
-    - name: Set up BMPP
-      run: |
-        cd work
-        tar -zxvf dktools.tar.gz
-        cd dktools-debian-pkg
-        chmod +x install* deb-prepare show-os-release
-        sudo ./deb-prepare > /dev/null
-        sudo ./install-rescue > /dev/null
-        sudo ./install-cli > /dev/null
-        sudo ./install-dktools > /dev/null
-        cd ../../
+    # - name: Set up BMPP
+    #   run: |
+    #     cd work
+    #     tar -zxvf dktools.tar.gz
+    #     cd dktools-debian-pkg
+    #     chmod +x install* deb-prepare show-os-release
+    #     sudo ./deb-prepare > /dev/null
+    #     sudo ./install-rescue > /dev/null
+    #     sudo ./install-cli > /dev/null
+    #     sudo ./install-dktools > /dev/null
+    #     cd ../../
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
