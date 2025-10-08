@@ -17,7 +17,7 @@ jobs:
         cd work
         tar -zxvf dktools.tar.gz
         cd dktools-debian-pkg
-        chmod +x install* deb-prepare
+        chmod +x install* deb-prepare show-os-release
         sudo ./deb-prepare
         sudo ./install-cli
         sudo ./install-rescue
