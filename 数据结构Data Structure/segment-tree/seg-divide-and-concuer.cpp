@@ -1,4 +1,4 @@
-// {"name":"<线段树分治>","intro":"<看到相关的题就用>"}
+// {"name":"线段树分治","intro":"看到相关的题就用"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 5, M = 2e5 + 5;
