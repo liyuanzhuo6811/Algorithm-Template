@@ -1,44 +1,36 @@
-#include <cstdio>
 #include <algorithm>
 #include <cctype>
+#include <cstdio>
 #include <cstring>
 using namespace std;
 namespace fr {
 constexpr int L = (1 << 21);
 char buf[L], obuf[L], *p1 = buf, *p2 = buf, *O = obuf;
-#define gc() ((p1==p2 && (p2=(p1=buf)+fread(buf,1,L,stdin),p1==p2))?EOF:(*(p1++)))
-#define prc(c) (((O==(obuf+L))?(fwrite(obuf,1,O-obuf,stdout),O=obuf):(0)),(*(O++))=(c))
-template<typename T>
-void rd(T &x) {
+#define gc() ((p1 == p2 && (p2 = (p1 = buf) + fread(buf, 1, L, stdin), p1 == p2)) ? EOF : (*(p1++)))
+#define prc(c) (((O == (obuf + L)) ? (fwrite(obuf, 1, O - obuf, stdout), O = obuf) : (0)), (*(O++)) = (c))
+template <typename T> void rd(T &x) {
     bool flg = false;
     x = 0;
     char c = gc();
 
-    while (isspace(c))
-        c = gc();
+    while (isspace(c)) c = gc();
 
-    if (c == '-')
-        flg = true, c = gc();
+    if (c == '-') flg = true, c = gc();
 
-    while (isdigit(c))
-        x = x * 10 + c - '0', c = gc();
+    while (isdigit(c)) x = x * 10 + c - '0', c = gc();
 
-    if (flg)
-        x = -x;
+    if (flg) x = -x;
 }
 void rd(char *&x) {
     char c = gc();
 
-    while (isspace(c))
-        c = gc();
+    while (isspace(c)) c = gc();
 
-    while (!isspace(c))
-        (*(x++)) = c, c = gc();
+    while (!isspace(c)) (*(x++)) = c, c = gc();
 
     (*(x++)) = '\0';
 }
-template<typename T>
-void wr(T x) {
+template <typename T> void wr(T x) {
     static char stk[40];
     int top = 0;
 
@@ -47,33 +39,27 @@ void wr(T x) {
         return;
     }
 
-    if (x < 0)
-        x = -x, prc('-');
+    if (x < 0) x = -x, prc('-');
 
-    while (x)
-        stk[top++] = int(x % 10) + '0', x /= 10;
+    while (x) stk[top++] = int(x % 10) + '0', x /= 10;
 
-    for (int i = top - 1; i >= 0; --i)
-        prc(stk[i]);
+    for (int i = top - 1; i >= 0; --i) prc(stk[i]);
 }
 void wr(const char *s) {
     int len = strlen(s);
 
-    for (int i = 0; i < len; ++i)
-        prc(s[i]);
+    for (int i = 0; i < len; ++i) prc(s[i]);
 }
-void pc(char s) {
-    prc(s);
-}
+void pc(char s) { prc(s); }
 void flush() {
     fwrite(obuf, 1, O - obuf, stdout);
     O = obuf;
 }
-}
+} // namespace fr
+using fr::flush;
+using fr::pc;
 using fr::rd;
 using fr::wr;
-using fr::pc;
-using fr::flush;
 namespace max_flow {
 constexpr int N = 210, M = 11010;
 int hd[N], nxt[M << 1], tv[M << 1], ecnt = 1, cur[N], tag[N];
@@ -108,8 +94,7 @@ bool bfs(int s, int t, int tot) {
     return tag[t] != 0;
 }
 long long dfs(int u, int t, long long fl) {
-    if (u == t)
-        return fl;
+    if (u == t) return fl;
 
     long long ret = 0;
 
@@ -121,8 +106,7 @@ long long dfs(int u, int t, long long fl) {
             ret += k;
             fl -= k;
 
-            if (!fl)
-                break;
+            if (!fl) break;
         }
 
     return ret;
@@ -137,7 +121,7 @@ long long dinic(int s, int t, int tot) {
 
     return ans;
 }
-}
+} // namespace max_flow
 #include <tuple>
 #include <vector>
 constexpr int N = 210, M = 11010;
@@ -178,8 +162,7 @@ int main() {
     if (res != tot) {
         wr("please go home to sleep\n");
     } else {
-        for (int i = m + 1; i < max_flow::ecnt / 2; ++i)
-            max_flow::w[i << 1] = max_flow::w[i << 1 | 1] = 0;
+        for (int i = m + 1; i < max_flow::ecnt / 2; ++i) max_flow::w[i << 1] = max_flow::w[i << 1 | 1] = 0;
 
         auto ans = max_flow::dinic(s, t, n);
         ans += max_flow::w[max_flow::ecnt];
