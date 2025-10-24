@@ -24,11 +24,7 @@ tex.write("""\\documentclass[9pt, a4paper, oneside]{book}
 {\\normalfont\\normalsize\\bfseries}{\\thesubsubsection}{1em}{}
 \\geometry{left=3.18cm, right=3.18cm, top=2.54cm, bottom=2.54cm}
 \\title{\\Huge XCPC Template Library}
-\\author{
-    Wu Honglin / real01bit \\\\
-    Li Yuanzhuo / SnowFlavour \\\\
-    Liu Haocheng / lotus\\_grass \\\\
-}
+\\author{Jinan Zhensheng School}
 \\date{最后一次修改：\\today}
 \\newfontfamily\\firacode{FiraCode-Regular.ttf}
 \\lstset{
