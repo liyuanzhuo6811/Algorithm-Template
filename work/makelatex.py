@@ -102,6 +102,7 @@ def gci(filepath, rootpath):
 
 gci(os.getcwd(), os.getcwd())
 tex.write("""
-\input{cont.tex}
-\end{document}
+\\chapter{附录}
+\\input{cont.tex}
+\\end{document}
 """)

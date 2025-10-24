@@ -1,6 +1,6 @@
 import requests, json, time, os
 con = open("work/tex/cont.tex", "w", encoding="utf8")
-con.write("\\chapter{贡献者}\n感谢所有为本项目贡献过提交的成员。\n")
+con.write("\\section{贡献者}\n感谢所有为本项目贡献过提交的成员。\n")
 reg = requests.get("https://api.github.com/repos/liyuanzhuo6811/Algorithm-Template/contributors", verify=False)
 if reg.status_code != 200:
     print("Cannot get the list.")
