@@ -1,4 +1,4 @@
-// {"name": "单纯形法", "intro": "（需要补充）"}
+// {"name": "单纯形法", "intro": "看见线性规划状物直接嗯上"}
 #include <cmath>
 #include <cstring>
 #include <iostream>

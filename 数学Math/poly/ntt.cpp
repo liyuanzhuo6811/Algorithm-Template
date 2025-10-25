@@ -1,4 +1,4 @@
-// {"name": "NTT", "intro": "（需要补充）"}
+// {"name": "NTT", "intro": "比 FFT 精度有保障"}
 #include <algorithm>
 #include <cmath>
 #include <cstdio>

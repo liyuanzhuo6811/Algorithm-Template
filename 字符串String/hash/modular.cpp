@@ -1,4 +1,4 @@
-// {"name": "字符串哈希", "intro": ""}
+// {"name": "字符串哈希", "intro": "过于朴素"}
 #include <cstring>
 #include <string>
 using std::string;

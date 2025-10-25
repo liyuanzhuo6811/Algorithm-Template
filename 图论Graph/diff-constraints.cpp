@@ -1,4 +1,4 @@
-// {"name": "差分约束", "intro": "（需要补充）"}
+// {"name": "差分约束", "intro": "神秘东西"}
 #include <cstring>
 #include <iostream>
 #include <queue>

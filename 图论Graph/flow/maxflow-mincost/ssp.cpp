@@ -1,3 +1,4 @@
+// {"name": "SSP 算法", "intro": "不能有负环，求最小费用最大流"}
 #include<iostream>
 #include<cstdio>
 #include<queue>

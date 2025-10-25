@@ -1,3 +1,4 @@
+// {"name": "primal-dual 算法", "intro": "有负环的最小费用最大流"}
 #include<iostream>
 #include<cstdio>
 #include<queue>

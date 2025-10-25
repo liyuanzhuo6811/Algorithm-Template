@@ -1,4 +1,4 @@
-// {"name": "AC自动机", "intro": "（需要补充）"}
+// {"name": "AC自动机", "intro": "自动 ac"}
 #include <cstring>
 #include <queue>
 #include <vector>

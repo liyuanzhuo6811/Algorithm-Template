@@ -1,4 +1,4 @@
-// {"name": "Z函数", "intro": "（需要补充）"}
+// {"name": "Z函数", "intro": "也叫 exkmp"}
 #include <cstring>
 #include <iostream>
 #include <vector>

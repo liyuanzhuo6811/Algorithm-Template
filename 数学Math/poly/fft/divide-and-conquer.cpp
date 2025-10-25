@@ -1,4 +1,4 @@
-// {"name": "快速傅里叶变换", "intro": "（需要补充）"}
+// {"name": "快速傅里叶变换", "intro": "递归实现"}
 #include <cmath>
 #include <cstdio>
 #define MAXN 4000005

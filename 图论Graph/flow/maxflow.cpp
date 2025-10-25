@@ -1,3 +1,4 @@
+// {"name": "dinic 算法", "intro": "求最大流"}
 #include<iostream>
 #include<cstring>
 #include<cstdio>
