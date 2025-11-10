@@ -1,4 +1,4 @@
-// {"name": "带修莫队", "intro": "在 $O(n^{\frac{5}{3}})$ 次方内解决可回滚的修改问题。"}
+// {"name": "带修莫队", "intro": "在 $O(n^{\\frac{5}{3}})$ 次方内解决可回滚的修改问题。"}
 
 for (int sz = max(1.0, pow(n, 2.0 / 3)), i = 1; i <= n; i++) bl[i] = (i - 1) / sz + 1;
 sort(q + 1, q + n + 1, [](oper a, oper b) {
