@@ -15,8 +15,7 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cin >> h >> w;
-    for (int i = 0; i < h; i++)
-        cin >> s[i];
+    for (int i = 0; i < h; i++) cin >> s[i];
     f[0] = 1;
     for (int i = 0; i < h; i++)
         for (int j = 0; j < w; j++) {
@@ -25,22 +24,16 @@ int main() {
             for (const auto &p : g) {
                 int x = p.first, k = p.second;
                 int y = clr(x, j), z = add(x, j);
-                if (j == w - 1)
-                    (f[clr(y, w) << 1] += k) %= mod;
-                else
-                    (f[y] += k) %= mod;
-                if (s[i][j] == '.' && !tak(x, j - 1) && !tak(x, j) &&
-                    !tak(x, j + 1) && !tak(x, j + 2)) {
-                    if (j == w - 1)
-                        (f[clr(z, w) << 1] += k) %= mod;
-                    else
-                        (f[z] += k) %= mod;
+                if (j == w - 1) (f[clr(y, w) << 1] += k) %= mod;
+                else (f[y] += k) %= mod;
+                if (s[i][j] == '.' && !tak(x, j - 1) && !tak(x, j) && !tak(x, j + 1) && !tak(x, j + 2)) {
+                    if (j == w - 1) (f[clr(z, w) << 1] += k) %= mod;
+                    else (f[z] += k) %= mod;
                 }
             }
         }
     int ans = 0;
-    for (const auto &p : f)
-        (ans += p.second) %= mod;
+    for (const auto &p : f) (ans += p.second) %= mod;
     cout << ans;
     return 0;
 }
