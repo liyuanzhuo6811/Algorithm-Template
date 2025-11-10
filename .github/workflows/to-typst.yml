@@ -1,0 +1,55 @@
+on:
+  workflow_dispatch:
+
+name: Make Typst
+jobs:
+  topdf:
+    name: Make Typst
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        ref: main
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    # 安装 Rust（用于通过 cargo 安装 typst CLI）
+    - name: Set up Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+        override: true
+
+    - name: Install typst CLI
+      run: |
+        # 使用 cargo 安装 typst（如果你有其它安装方式可以替换此处）
+        cargo install typst || true
+        # 若 cargo install 名称不同或你想使用预构建二进制，请替换上面命令
+
+    - name: Make Typst PDF
+      run: |
+        pip install requests
+        python work/get_contribute.py
+        # 生成 typst 源的脚本（请确保存在或改为你的脚本名）
+        python work/maketypst.py
+        cd work/typst
+        # 编译 typst 文件为 PDF（假设源为 all.typ，输出 all-pdf.pdf）
+        typst compile all.typ all-pdf.pdf
+        cd ../../
+
+    - name: Create Release and Upload Assets
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          work/typst/all-typ.pdf
+          work/typst/all-typ.typ
+        body: 新的PDF版本（Typst 生成）。更改内容详见Commit。
+        tag_name: Typst-Release
+        token: ${{ secrets.ACCESS_TOKEN }}
+
