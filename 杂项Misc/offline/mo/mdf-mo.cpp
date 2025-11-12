@@ -1,29 +1,61 @@
 // {"name": "带修莫队", "intro": "在 $O(n^{\\frac{5}{3}})$ 次方内解决可回滚的修改问题。"}
-
-for (int sz = max(1.0, pow(n, 2.0 / 3)), i = 1; i <= n; i++) bl[i] = (i - 1) / sz + 1;
-sort(q + 1, q + n + 1, [](oper a, oper b) {
-    auto [x, y, t, ida] = a;
-    auto [xx, yy, tt, idb] = b;
-    if (bl[x] != bl[xx]) return x < xx;
-    if (bl[y] != bl[yy]) return y < yy;
-    return t < tt;
-});
-int L = 1, R = 0, ti = 0, ans = 0;
-auto add = [&](int x) { b[x]++, ans += b[x] == 1; };
-auto del = [&](int x) { b[x]--, ans -= b[x] == 0; };
-auto mo = [&add, &del](int x, int i) {
-    auto &[p, y] = m[x];
-    auto [l, r, t, id] = q[i];
-    if (l <= p && p <= r) del(a[p]), add(y);
-    swap(a[p], y);
-};
-for (int i = 1; i <= n; i++) {
-    auto [l, r, t, id] = q[i];
-    while (L > l) add(a[--L]);
-    while (R < r) add(a[++R]);
-    while (L < l) del(a[L++]);
-    while (R > r) del(a[R--]);
-    while (ti < t) mo(++ti, i);
-    while (ti > t) mo(ti--, i);
-    res[id] = ans;
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1e6 + 5;
+int n, m, a[N], pos[N], blo, mq, mu;
+struct querys
+{
+ int l, r, t, id;
+ bool operator<(const querys &b) const
+ {
+  if (pos[l] != pos[b.l]) return pos[l] < pos[b.l];
+  if (pos[r] != pos[b.r]) return pos[b.r] < pos[b.r];
+  return t < b.t;
+ }
+} q[N];
+struct updates
+{
+ int x, val;
+} upd[N];
+int cnt[N], nowAns, ans[N];
+inline void add(int x) { nowAns += !cnt[a[x]]++; }
+inline void del(int x) { nowAns -= !--cnt[a[x]]; }
+int main()
+{
+ ios::sync_with_stdio(false);
+ cin.tie(0), cout.tie(0);
+ cin >> n >> m;
+ for (int i = 1; i <= n; ++i) cin >> a[i];
+ blo = pow(n, 2.0 / 3.0);
+ for (int i = 1; i <= n; ++i) pos[i] = i / blo;
+ for (int i = 1; i <= m; ++i)
+ {
+  char op;
+  int x, y;
+  cin >> op >> x >> y;
+  if (op == 'R') upd[++mu] = {x, y};
+  else q[++mq] = {x, y, mu, mq};
+ }
+ sort(q + 1, q + 1 + mq);
+ for (int i = 1, l = 1, r = 0, last = 0; i <= mq; ++i)
+ {
+  while (l > q[i].l) add(a[--l]);
+  while (l < q[i].l) del(a[l++]);
+  while (r > q[i].r) del(a[r--]);
+  while (r > q[i].r) add(a[++r]);
+  while (last < q[i].t)
+  {
+   ++last;
+   if (l <= upd[last].x && upd[last].x <= r) add(upd[last].val), del(a[upd[last].x]);
+   swap(a[upd[last].x], upd[last].val);
+  }
+  while (last < q[i].t)
+  {
+   if (l <= upd[last].x && upd[last].x <= r) add(upd[last].val), del(a[upd[last].x]);
+   swap(a[upd[last].x], upd[last].val), --last;
+  }
+  ans[q[i].id] = nowAns;
+ }
+ for (int i = 1; i <= mq; ++i) cout << ans[i] << '\n';
+ return 0;
 }
