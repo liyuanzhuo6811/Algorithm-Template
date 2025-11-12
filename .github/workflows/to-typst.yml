@@ -35,7 +35,7 @@ jobs:
         sudo apt update
         sudo apt install snapd
         sudo snap install typst
-
+        sudo apt install fonts-noto-cjk
     - name: Make Typst PDF
       run: |
         pip install requests
