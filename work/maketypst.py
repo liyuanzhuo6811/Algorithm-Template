@@ -21,7 +21,6 @@ def convert_math(text: str) -> str:
     def disp_inline(m):
         content = m.group(1).strip()
         return f"#mi({json.dumps(content)})"
-
     # 先处理 display 模式（多行）
     text = re.sub(r"\$\$(.*?)\$\$", disp_display, text, flags=re.S)
     text = re.sub(r"\\\[(.*?)\\\]", disp_display, text, flags=re.S)

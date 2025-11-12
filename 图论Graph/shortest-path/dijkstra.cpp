@@ -1,4 +1,7 @@
-// {"name": "Dijkstra", "intro": "利用Dijkstra求最短路。时间复杂度为稳定的 $O(m \log n)$，不能有负权。"}
+// {"name":"Dijkstra","intro":"利用Dijkstra求最短路。时间复杂度为稳定的 $O(m \log n)$，不能有负权。"}
+#include <bits/stdc++.h>
+using namespace std;
+const int MAXN = 1000005;
 struct edge {
     int v, w;
 };
