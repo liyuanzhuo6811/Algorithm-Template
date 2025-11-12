@@ -7,11 +7,11 @@ jobs:
     name: Make Typst
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v5
-      with:
-        token: ${{ secrets.ACCESS_TOKEN }}
-        ref: main
+    # - name: Checkout
+    #   uses: actions/checkout@v5
+    #   with:
+    #     token: ${{ secrets.ACCESS_TOKEN }}
+    #     ref: main
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -47,13 +47,13 @@ jobs:
         typst compile all.typ all-pdf.pdf
         cd ../../
 
-    - name: Create Release and Upload Assets
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          work/typst/all-typ.pdf
-          work/typst/all-typ.typ
-        body: 新的PDF版本（Typst 生成）。更改内容详见Commit。
-        tag_name: Typst-Release
-        token: ${{ secrets.ACCESS_TOKEN }}
+    # - name: Create Release and Upload Assets
+    #   uses: softprops/action-gh-release@v1
+    #   with:
+    #     files: |
+    #       work/typst/all-typ.pdf
+    #       work/typst/all-typ.typ
+    #     body: 新的PDF版本（Typst 生成）。更改内容详见Commit。
+    #     tag_name: Typst-Release
+    #     token: ${{ secrets.ACCESS_TOKEN }}
 
