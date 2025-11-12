@@ -13,30 +13,28 @@ jobs:
         token: ${{ secrets.ACCESS_TOKEN }}
         ref: main
 
-    # - name: Set up Python
-    #   uses: actions/setup-python@v5
-    #   with:
-    #     python-version: '3.13'
     - name: Set up Python
-      run: |
-        sudo apt install software-properties-common -y
-        sudo add-apt-repository ppa:deadsnakes/ppa -y
-        sudo apt update
-        sudo apt install python3.13 -y
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
 
     # 安装 Rust（用于通过 cargo 安装 typst CLI）
-    - name: Set up Rust toolchain
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
-        profile: minimal
-        override: true
+    # - name: Set up Rust toolchain
+    #   uses: actions-rs/toolchain@v1
+    #   with:
+    #     toolchain: stable
+    #     profile: minimal
+    #     override: true
+
+    # - name: Install typst CLI
+    #   run: |
+    #     cargo install typst || true
 
     - name: Install typst CLI
       run: |
-        # 使用 cargo 安装 typst（如果你有其它安装方式可以替换此处）
-        cargo install typst || true
-        # 若 cargo install 名称不同或你想使用预构建二进制，请替换上面命令
+        sudo apt update
+        sudo apt install snapd
+        sudo snap install typst
 
     - name: Make Typst PDF
       run: |
