@@ -13,10 +13,16 @@ jobs:
         token: ${{ secrets.ACCESS_TOKEN }}
         ref: main
 
+    # - name: Set up Python
+    #   uses: actions/setup-python@v5
+    #   with:
+    #     python-version: '3.13'
     - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.13'
+      run: |
+        sudo apt install software-properties-common -y
+        sudo add-apt-repository ppa:deadsnakes/ppa -y
+        sudo apt update
+        sudo apt install python3.13 -y
 
     # 安装 Rust（用于通过 cargo 安装 typst CLI）
     - name: Set up Rust toolchain
