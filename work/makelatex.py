@@ -10,6 +10,7 @@ tex.write("""\\documentclass[9pt, a4paper, oneside]{book}
 \\usepackage{geometry}
 \\usepackage{titlesec}
 \\usepackage{graphicx}
+\\usepackage{hyperref}
 
 \\titleformat{\\chapter}
 {\\normalfont\\Large\\bfseries}{第 \\thechapter 部分}{1em}{}
@@ -45,8 +46,8 @@ tex.write("""\\documentclass[9pt, a4paper, oneside]{book}
     frame=topline,
     framesep=1em
 }
-\setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
+\\setcounter{tocdepth}{4}
+\\setcounter{secnumdepth}{4}
 \\begin{document}
 \\maketitle
 \\tableofcontents
