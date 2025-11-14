@@ -11,7 +11,10 @@ tex.write("""\\documentclass[9pt, a4paper, oneside]{book}
 \\usepackage{titlesec}
 \\usepackage{graphicx}
 \\usepackage{hyperref}
-
+\\hypersetup{
+colorlinks=true,
+linkcolor=black
+}
 \\titleformat{\\chapter}
 {\\normalfont\\Large\\bfseries}{第 \\thechapter 部分}{1em}{}
 
@@ -81,6 +84,7 @@ def gci(filepath, rootpath):
                 with open(fi_d, encoding="utf8") as tmp:
                     code = tmp.read()
                     brief = title = fi.replace("_", "\\_")
+                    
                     if code[:2] == "//":
                         fir = code.split("\n")[0]
                         code = "\n".join(code.split("\n")[1:])
@@ -88,8 +92,8 @@ def gci(filepath, rootpath):
                         fir = fir.replace("\\", "\\\\")
                         print(fir)
                         dc = json.loads(fir)
-                        title = dc["name"]
-                        brief = dc["intro"]
+                        title = dc["name"].replace("_", "\\_")
+                        brief = dc["intro"].replace("_", "\\_")
                     
                     tex.write(f"\\{titf[nowc - totc]}{{{title}}}\n")
                     tex.write(brief + "\n")
