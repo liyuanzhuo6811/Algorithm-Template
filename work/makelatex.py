@@ -31,17 +31,15 @@ linkcolor=black
 \\author{Jinan Zhensheng School}
 \\date{最后一次修改：\\today}
 \\newfontfamily\\firacode{FiraCode-Regular.ttf}
+\\newfontfamily\\firacodebold{FiraCode-SemiBold.ttf}
 \\lstset{
     language=C++,
     basicstyle=\\firacode\\small,
     breaklines=true,
-    keywordstyle=\\bfseries\\color{red},
+    keywordstyle=\\firacodebold\\color{red},
     stringstyle=\\color{green}\\ttfamily,
     morekeywords={},
-    emph={self},
-    emphstyle=\\bfseries,
     commentstyle=\\itshape,
-    stringstyle=\\bfseries,
     columns=flexible,
     numbers=left,
     numbersep=2em,
