@@ -1,4 +1,4 @@
-// {"name":"outline_dp","intro":"维护轮廓线"}
+// {"name":"轮廓线DP","intro":"维护轮廓线"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 26, mod = 1e9 + 7;

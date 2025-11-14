@@ -15,6 +15,7 @@ tex.write("""\\documentclass[9pt, a4paper, oneside]{book}
 colorlinks=true,
 linkcolor=black
 }
+\\definecolor{darkgreen}{RGB}{12,100,0}
 \\titleformat{\\chapter}
 {\\normalfont\\Large\\bfseries}{第 \\thechapter 部分}{1em}{}
 
@@ -37,7 +38,7 @@ linkcolor=black
     basicstyle=\\firacode\\small,
     breaklines=true,
     keywordstyle=\\firacodebold\\color{red},
-    stringstyle=\\color{green}\\ttfamily,
+    stringstyle=\\color{darkgreen}\\ttfamily,
     morekeywords={},
     commentstyle=\\itshape,
     columns=flexible,
@@ -62,9 +63,6 @@ def gci(filepath, rootpath):
     print(filepath)
     totc = list(rootpath).count("/")
     nowc = list(filepath).count("/")
-    # print(totc, nowc)
-    # print(nowc - totc)
-    # print(fi)
     red = filepath.split("/")[-1]
     if ".intro" in files:
         red = open(os.path.join(filepath, ".intro"), encoding="utf8").read()

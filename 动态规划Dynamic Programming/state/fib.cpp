@@ -1,4 +1,4 @@
-// {"name":"ddp","intro":"$O(n (fib(m))^2)$"}
+// {"name":"压缩状态集合","intro":"$O(n (fib(m))^2)$"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 26, mod = 1e9 + 7;

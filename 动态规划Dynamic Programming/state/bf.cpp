@@ -1,4 +1,4 @@
-// {"name":"bf","intro":"$O(4^m)$"}
+// {"name":"暴力","intro":"$O(4^m)$"}
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 26, mod = 1e9 + 7;

@@ -1,4 +1,4 @@
-// {"name":"ddp","intro":"动态 dp"}
+// {"name":"动态DP","intro":"会动的DP"}
 #include <bits/stdc++.h>
 #define INF 0x3f3f3f3f3f3f3f3f
 #define inf 0x3f3f3f3f
