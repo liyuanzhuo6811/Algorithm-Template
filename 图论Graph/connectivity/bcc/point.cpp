@@ -30,7 +30,9 @@ void tarjan(int u, int rt) {
             low[u] = min(low[u], low[v]);
             if (dfn[u] <= low[v]) {
                 ++cnt;
-                do { dcc[cnt].push_back(stk[top--]); } while (stk[top + 1] != v);
+                do {
+                    dcc[cnt].push_back(stk[top--]);
+                } while (stk[top + 1] != v);
                 dcc[cnt].push_back(u);
             }
         } else low[u] = min(low[u], dfn[v]);

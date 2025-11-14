@@ -28,7 +28,8 @@ int update(int pre, int pl, int pr, int loc, int val) {
     int mid = (pl + pr) >> 1;
     tree[rt].ls = tree[pre].ls;
     tree[rt].rs = tree[pre].rs;
-    if (loc <= mid) tree[rt].ls = update(tree[pre].ls, pl, mid, loc, val);
+    if (loc <= mid)
+        tree[rt].ls = update(tree[pre].ls, pl, mid, loc, val);
     else tree[rt].rs = update(tree[rt].rs, mid + 1, pr, loc, val);
     return rt;
 }

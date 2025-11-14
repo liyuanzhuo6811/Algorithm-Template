@@ -26,8 +26,10 @@ struct LiChaoT {
         int &v = t[rt];
         int mid = (L + R) / 2;
         if (comp(seg[v](mid), seg[x](mid)) < 0) swap(v, x);
-        if (comp(seg[v](L), seg[x](L)) < 0) update(rt << 1, L, mid, x);
-        if (comp(seg[v](R), seg[x](R)) < 0) update(rt << 1 | 1, mid + 1, R, x);
+        if (comp(seg[v](L), seg[x](L)) < 0)
+            update(rt << 1, L, mid, x);
+        if (comp(seg[v](R), seg[x](R)) < 0)
+            update(rt << 1 | 1, mid + 1, R, x);
     }
     void insert(int rt, int L, int R, int l, int r, int x) {
         if (l <= L && R <= r) return update(rt, L, R, x);
@@ -46,7 +48,8 @@ struct LiChaoT {
         pdi ret = {seg[t[rt]](x), t[rt]};
         if (L == R) return ret;
         int mid = (L + R) / 2;
-        return mx(ret, mx(query(rt << 1, L, mid, x), query(rt << 1 | 1, mid + 1, R, x)));
+        return mx(ret, mx(query(rt << 1, L, mid, x),
+                          query(rt << 1 | 1, mid + 1, R, x)));
     }
 } t;
 int main() {
@@ -63,9 +66,12 @@ int main() {
             cout << (last = t.query(1, 0, 40000, k).second) << '\n';
         } else {
             cin >> x >> y >> xx >> yy;
-            x = (x + last - 1) % M1 + 1, xx = (xx + last - 1) % M1 + 1;
-            y = (y + last - 1) % M2 + 1, yy = (yy + last - 1) % M2 + 1;
-            t.add(x, y, xx, yy), t.insert(1, 0, 40000, min(x, xx), max(x, xx), t.cnt);
+            x = (x + last - 1) % M1 + 1,
+            xx = (xx + last - 1) % M1 + 1;
+            y = (y + last - 1) % M2 + 1,
+            yy = (yy + last - 1) % M2 + 1;
+            t.add(x, y, xx, yy),
+                t.insert(1, 0, 40000, min(x, xx), max(x, xx), t.cnt);
         }
     }
     return 0;

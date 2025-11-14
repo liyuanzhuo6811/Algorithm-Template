@@ -50,10 +50,13 @@ class BinomModPrimePower {
     }
 
   public:
-    BinomModPrimePower(int p, int a, int pa) : p(p), a(a), pa(pa), f(pa) {
+    BinomModPrimePower(int p, int a, int pa)
+        : p(p), a(a), pa(pa), f(pa) {
         // Pretreatment.
         f[0] = 1;
-        for (int i = 1; i < pa; ++i) { f[i] = i % p ? (long long)f[i - 1] * i % pa : f[i - 1]; }
+        for (int i = 1; i < pa; ++i) {
+            f[i] = i % p ? (long long)f[i - 1] * i % pa : f[i - 1];
+        }
     }
 
     // Calculate Binom(n, k) mod pa.
@@ -93,7 +96,9 @@ class BinomMod {
     // Calculate Binom(n, k) mod m.
     int binomial(long long n, long long k) {
         long long res = 0;
-        for (size_t i = 0; i != bp.size(); ++i) { res = (bp[i].binomial(n, k) * crt_m[i] + res) % m; }
+        for (size_t i = 0; i != bp.size(); ++i) {
+            res = (bp[i].binomial(n, k) * crt_m[i] + res) % m;
+        }
         return res;
     }
 };

@@ -8,7 +8,9 @@ int n, m, s, t, head[N], tot = 1;
 struct edge {
     int v, nxt, w, c;
 } e[M << 1];
-inline void add(int u, int v, int w, int c) { e[++tot] = {v, head[u], w, c}, head[u] = tot; }
+inline void add(int u, int v, int w, int c) {
+    e[++tot] = {v, head[u], w, c}, head[u] = tot;
+}
 int d[N], cur[N], mincost, maxflow;
 bool vis[N];
 inline bool spfa(int s, int t) {

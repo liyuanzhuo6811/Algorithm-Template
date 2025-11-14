@@ -4,8 +4,12 @@ using namespace std;
 const int N = 3e5 + 5;
 int n, m, fa[N], ch[N][2], val[N], tag[N], sum[N];
 inline int get(int p) { return ch[fa[p]][1] == p; }
-inline bool is_root(int p) { return ch[fa[p]][0] != p && ch[fa[p]][1] != p; }
-inline void pushup(int p) { sum[p] = sum[ch[p][0]] ^ val[p] ^ sum[ch[p][1]]; }
+inline bool is_root(int p) {
+    return ch[fa[p]][0] != p && ch[fa[p]][1] != p;
+}
+inline void pushup(int p) {
+    sum[p] = sum[ch[p][0]] ^ val[p] ^ sum[ch[p][1]];
+}
 inline void reverse(int p) { swap(ch[p][0], ch[p][1]), tag[p] ^= 1; }
 inline void pushdown(int p) {
     if (!tag[p]) return;
@@ -28,7 +32,8 @@ void splay(int p) {
         if (!is_root(f)) rotate(get(p) == get(f) ? f : p);
 }
 inline void access(int p) {
-    for (int child = 0; p; child = p, p = fa[p]) splay(p), ch[p][1] = child, pushup(p);
+    for (int child = 0; p; child = p, p = fa[p])
+        splay(p), ch[p][1] = child, pushup(p);
 }
 inline void makeroot(int p) { access(p), splay(p), reverse(p); }
 inline void split(int u, int v) { makeroot(u), access(v), splay(v); }
@@ -40,7 +45,8 @@ inline int findroot(int p) {
 inline void link(int u, int v) { makeroot(u), fa[u] = v; }
 inline void cut(int u, int v) {
     makeroot(u);
-    if (findroot(v) == u && fa[v] == u && !ch[v][0]) fa[v] = ch[u][1] = 0, pushup(u);
+    if (findroot(v) == u && fa[v] == u && !ch[v][0])
+        fa[v] = ch[u][1] = 0, pushup(u);
 }
 int main() {
     cin.tie(0)->sync_with_stdio(false);

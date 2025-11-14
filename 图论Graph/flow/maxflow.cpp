@@ -39,7 +39,8 @@ int dfs(int u, int minf) {
     for (int i = cur[u]; ~i; i = e[i].nxt) {
         int v = e[i].v;
         cur[u] = i;
-        if (dis[v] == dis[u] + 1 && (flow = dfs(v, min(e[i].w, minf)))) {
+        if (dis[v] == dis[u] + 1 &&
+            (flow = dfs(v, min(e[i].w, minf)))) {
             e[i].w -= flow, e[i ^ 1].w += flow;
             minf -= flow, fsum += flow;
             if (!minf) return fsum;

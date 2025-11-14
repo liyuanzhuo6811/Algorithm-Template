@@ -8,7 +8,8 @@ int main() {
     cin >> n >> m;
     for (int i = 1; i <= n; i++) scanf("%d", a + i), st[i][i] = a[i];
     for (int j = 1; 1 + (1 << j) <= n; j++)
-        for (int i = 1; i + (1 << j) - 1 <= n; i++) st[i][j] = max(st[i][j - 1], st[i + (1 << j - 1)][j - 1]);
+        for (int i = 1; i + (1 << j) - 1 <= n; i++)
+            st[i][j] = max(st[i][j - 1], st[i + (1 << j - 1)][j - 1]);
     while (m--) {
         int l, r, ans;
         scanf("%d%d", &l, &r);

@@ -5,14 +5,16 @@ const int N = 26, mod = 1e9 + 7;
 int n, m, E[N], k, id[(1 << 24) + 5];
 char s[N][N];
 vector<int> st;
-inline void dfs(int i, int S, int U, const vector<size_t> &dp, size_t &sum) {
+inline void dfs(int i, int S, int U, const vector<size_t> &dp,
+                size_t &sum) {
     if (i >= m) {
         (sum += dp[id[S]]) %= mod;
         return;
     }
     dfs(i + 1, S, U, dp, sum);
     if ((U >> i) & 1)
-        if (i == 0 || !(S & (1 << i - 1))) dfs(i + 1, S | (1 << i), U, dp, sum);
+        if (i == 0 || !(S & (1 << i - 1)))
+            dfs(i + 1, S | (1 << i), U, dp, sum);
 }
 int main() {
     ios_base::sync_with_stdio(false);

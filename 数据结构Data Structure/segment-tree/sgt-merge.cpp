@@ -27,7 +27,8 @@ void dfs2(int u, int tp) {
     top[u] = tp, dfn[u] = ++Time;
     if (hson[u]) dfs2(hson[u], tp);
     for (int i = head[u]; i; i = e[i].nxt)
-        if (e[i].v != fa[u] && e[i].v != hson[u]) dfs2(e[i].v, e[i].v);
+        if (e[i].v != fa[u] && e[i].v != hson[u])
+            dfs2(e[i].v, e[i].v);
 }
 inline int LCA(int x, int y) {
     while (top[x] != top[y]) {
@@ -42,7 +43,8 @@ struct node {
     int ls, rs;
 } t[N * 100];
 void pushup(int p) {
-    if (t[t[p].ls].mx >= t[t[p].rs].mx) t[p].mx = t[t[p].ls].mx, t[p].id = t[t[p].ls].id;
+    if (t[t[p].ls].mx >= t[t[p].rs].mx)
+        t[p].mx = t[t[p].ls].mx, t[p].id = t[t[p].ls].id;
     else t[p].mx = t[t[p].rs].mx, t[p].id = t[t[p].rs].id;
 }
 void update(int &p, int pl, int pr, int k, int val) {

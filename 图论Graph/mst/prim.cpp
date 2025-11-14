@@ -8,7 +8,9 @@ struct E {
     int v, w, x;
 } e[M * 2];
 int n, m, h[N], cnte;
-void adde(int u, int v, int w) { e[++cnte] = E{v, w, h[u]}, h[u] = cnte; }
+void adde(int u, int v, int w) {
+    e[++cnte] = E{v, w, h[u]}, h[u] = cnte;
+}
 struct S {
     int u, d;
 };
@@ -37,7 +39,9 @@ void Prim() {
 }
 int main() {
     cin >> n >> m;
-    for (int i = 1, u, v, w; i <= m; ++i) { cin >> u >> v >> w, adde(u, v, w), adde(v, u, w); }
+    for (int i = 1, u, v, w; i <= m; ++i) {
+        cin >> u >> v >> w, adde(u, v, w), adde(v, u, w);
+    }
     Prim();
     if (cnt == n) cout << res;
     else cout << "No MST.";

@@ -25,7 +25,8 @@ inline void spfa(int s) {
 }
 int main() {
     cin >> n >> m;
-    for (int i = 1, u, v, w; i <= m; i++) cin >> u >> v >> w, add(u, v, w), add(v, u, w);
+    for (int i = 1, u, v, w; i <= m; i++)
+        cin >> u >> v >> w, add(u, v, w), add(v, u, w);
     spfa(1);
     return 0;
 }

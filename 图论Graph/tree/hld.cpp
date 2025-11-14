@@ -20,7 +20,9 @@ void hld2(int u, int nowtp) {
         if (v != fa[u] && v != hson[u]) hld2(v, v);
 }
 inline int LCA(int x, int y) {
-    while (top[x] != top[y]) return dep[top[x]] < dep[top[y]] ? y = fa[top[y]] : x = fa[top[x]];
+    while (top[x] != top[y])
+        return dep[top[x]] < dep[top[y]] ? y = fa[top[y]]
+                                         : x = fa[top[x]];
     return dep[x] < dep[y] ? x : y;
 }
 int main() { return 0; }

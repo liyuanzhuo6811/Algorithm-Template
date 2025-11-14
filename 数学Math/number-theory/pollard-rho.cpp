@@ -13,7 +13,8 @@ ll gcd(ll a, ll b) {
     return gcd(b, a % b);
 }
 ll bmul(ll a, ll b, ll m) { // 快速乘
-    ull c = (ull)a * (ull)b - (ull)((long double)a / m * b + 0.5L) * (ull)m;
+    ull c = (ull)a * (ull)b -
+            (ull)((long double)a / m * b + 0.5L) * (ull)m;
     if (c < (ull)m) return c;
     return c + m;
 }

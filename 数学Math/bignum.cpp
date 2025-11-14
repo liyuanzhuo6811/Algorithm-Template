@@ -90,7 +90,9 @@ class Big {
             up = 0;
             for (int j = 0; j < T.len; ++j) {
                 te = a[i] * T.a[j] + res.a[i + j] + up;
-                if (te > MAXN) tee = te - te / (MAXN + 1) * (MAXN + 1), up = te / (MAXN + 1), res.a[i + j] = tee;
+                if (te > MAXN)
+                    tee = te - te / (MAXN + 1) * (MAXN + 1),
+                    up = te / (MAXN + 1), res.a[i + j] = tee;
                 else up = 0, res.a[i + j] = te;
             }
             if (up) res.a[i + T.len] = up;
@@ -103,7 +105,8 @@ class Big {
         Big res;
         int down = 0;
         for (int i = len - 1; i >= 0; --i)
-            res.a[i] = (a[i] + down * (MAXN + 1)) / b, down = a[i] + down * (MAXN + 1) - res.a[i] * b;
+            res.a[i] = (a[i] + down * (MAXN + 1)) / b,
+            down = a[i] + down * (MAXN + 1) - res.a[i] * b;
         res.len = len;
         while (res.len > 1 && res.a[res.len - 1] == 0) --res.len;
         return res;
@@ -119,7 +122,8 @@ class Big {
     }
     int operator%(const int &b) const {
         int d = 0;
-        for (int i = len - 1; i >= 0; --i) d = (d * (MAXN + 1) % b + a[i]) % b;
+        for (int i = len - 1; i >= 0; --i)
+            d = (d * (MAXN + 1) % b + a[i]) % b;
         return d;
     }
     bool operator<(const Big &T) const {

@@ -8,7 +8,9 @@ int unit;
 struct node {
     int l, r, id;
     bool operator<(const node &x) const {
-        return l / unit == x.l / unit ? (r == x.r ? 0 : ((l / unit) & 1) ^ (r < x.r)) : l < x.l;
+        return l / unit == x.l / unit
+                   ? (r == x.r ? 0 : ((l / unit) & 1) ^ (r < x.r))
+                   : l < x.l;
     }
 } querys[N];
 void solve() {

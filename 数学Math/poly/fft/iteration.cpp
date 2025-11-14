@@ -8,7 +8,8 @@ int read() {
     int x = 0, f = 1;
     char c = getchar();
     while (c < '0' || c > '9') f ^= (c == '-'), c = getchar();
-    while (c >= '0' && c <= '9') x = (x << 1) + (x << 3) + (c ^ 48), c = getchar();
+    while (c >= '0' && c <= '9')
+        x = (x << 1) + (x << 3) + (c ^ 48), c = getchar();
     return f ? x : -x;
 }
 void write(int x) {
@@ -21,16 +22,23 @@ struct CP {
     db re, im;
     CP() { re = im = 0; }
     CP(db x, db y) { re = x, im = y; }
-    CP operator+(const CP &b) const { return CP(re + b.re, im + b.im); }
-    CP operator-(const CP &b) const { return CP(re - b.re, im - b.im); }
-    CP operator*(const CP &b) const { return CP(re * b.re - im * b.im, re * b.im + im * b.re); }
+    CP operator+(const CP &b) const {
+        return CP(re + b.re, im + b.im);
+    }
+    CP operator-(const CP &b) const {
+        return CP(re - b.re, im - b.im);
+    }
+    CP operator*(const CP &b) const {
+        return CP(re * b.re - im * b.im, re * b.im + im * b.re);
+    }
 };
 #define N 3000005
 int n, m, rev[N];
 CP a[N], b[N];
 inline void init(int n) {
     int b = log2(n);
-    for (int i = 1; i < n; i++) rev[i] = (rev[i >> 1] >> 1) + ((i & 1) << (b - 1));
+    for (int i = 1; i < n; i++)
+        rev[i] = (rev[i >> 1] >> 1) + ((i & 1) << (b - 1));
 }
 inline void FFT(CP *a, int n, int op) {
     for (int i = 0; i < n; i++)

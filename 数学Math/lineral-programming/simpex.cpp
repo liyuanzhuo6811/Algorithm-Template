@@ -48,7 +48,8 @@ int main() {
     for (int i = 1; i <= m; i++) {
         int s, t;
         cin >> s >> t;
-        for (int j = s; j <= t; j++) a[i][j] = 1; // 表示第i种志愿者在j时间可以服务
+        for (int j = s; j <= t; j++)
+            a[i][j] = 1; // 表示第i种志愿者在j时间可以服务
         cin >> b[i];
     }
     cout << (int)(simplex() + 0.5);

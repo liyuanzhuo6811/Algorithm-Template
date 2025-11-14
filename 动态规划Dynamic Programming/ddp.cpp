@@ -40,8 +40,12 @@ typedef long long ll;
 #define putchar putchar_unlocked
 #endif
 
-template <class T> inline bool ckmn(T &a, T b) { return a > b ? a = b, 1 : 0; }
-template <class T> inline bool ckmx(T &a, T b) { return a < b ? a = b, 1 : 0; } // clang-format off
+template <class T> inline bool ckmn(T &a, T b) {
+    return a > b ? a = b, 1 : 0;
+}
+template <class T> inline bool ckmx(T &a, T b) {
+    return a < b ? a = b, 1 : 0;
+} // clang-format off
 template <class T> inline void read(T &s)
 {
  s = 0; int f = 1; char c = getchar(); while (!isdigit(c)) { if (c == '-') { f = -1; } c = getchar(); }
@@ -53,8 +57,12 @@ template <class T> inline void wr(T x)
  if (!top) { buf[++top] = 0; } while (top) { putchar(buf[top--] ^ '0'); } return; 
 }
 template <class T, class... A> inline void read(T &x, A &...a) { read(x), read(a...); } // clang-format on
-template <class T, class... A> inline bool ckmn(T &x, T y, A... a) { return ckmn(x, y) | ckmn(x, a...); }
-template <class T, class... A> inline bool ckmx(T &x, T y, A... a) { return ckmx(x, y) | ckmx(x, a...); }
+template <class T, class... A> inline bool ckmn(T &x, T y, A... a) {
+    return ckmn(x, y) | ckmn(x, a...);
+}
+template <class T, class... A> inline bool ckmx(T &x, T y, A... a) {
+    return ckmx(x, y) | ckmx(x, a...);
+}
 
 const int N = 1e6 + 5;
 int n, m, a[N];
@@ -74,8 +82,11 @@ int head[N], Tot = 1;
 struct edge {
     int v, nxt;
 } e[N << 1];
-inline void add(int u, int v) { e[++Tot] = {v, head[u]}, head[u] = Tot; }
-int fa[N], dep[N], siz[N], hson[N], top[N], bot[N], dfn[N], id[N], idx;
+inline void add(int u, int v) {
+    e[++Tot] = {v, head[u]}, head[u] = Tot;
+}
+int fa[N], dep[N], siz[N], hson[N], top[N], bot[N], dfn[N], id[N],
+    idx;
 inline void dfs1(int u, int pa) {
     fa[u] = pa, dep[u] = dep[pa] + 1, siz[u] = 1;
     for (int i = head[u]; i; i = e[i].nxt) {
@@ -91,7 +102,8 @@ inline void dfs2(int u, int tp) {
     f[u][0] = g[u][0] = 0, f[u][1] = g[u][1] = a[u];
     if (hson[u]) {
         dfs2(hson[u], tp);
-        f[u][0] += my_max(f[hson[u]][0], f[hson[u]][1]), f[u][1] += f[hson[u]][0];
+        f[u][0] += my_max(f[hson[u]][0], f[hson[u]][1]),
+            f[u][1] += f[hson[u]][0];
         for (int i = head[u]; i; i = e[i].nxt) {
             int v = e[i].v;
             if (v == fa[u] || v == hson[u]) continue;
@@ -115,7 +127,8 @@ inline void build(int &p, int pl, int pr) {
 inline void update(int p, int pl, int pr, int pos) {
     if (pl == pr) return tr[p] = trans[id[pl]], void();
     int mid = (pl + pr) >> 1;
-    pos <= mid ? update(lc[p], pl, mid, pos) : update(rc[p], mid + 1, pr, pos);
+    pos <= mid ? update(lc[p], pl, mid, pos)
+               : update(rc[p], mid + 1, pr, pos);
     up(p);
 }
 inline void update_chain(int x, int val) {
@@ -125,7 +138,8 @@ inline void update_chain(int x, int val) {
         update(rt[top[x]], dfn[top[x]], bot[top[x]], dfn[x]);
         Matrix now = tr[rt[top[x]]];
         x = fa[top[x]];
-        trans[x].a[0][0] += my_max(now.a[0][0], now.a[1][0]) - my_max(last.a[0][0], last.a[1][0]);
+        trans[x].a[0][0] += my_max(now.a[0][0], now.a[1][0]) -
+                            my_max(last.a[0][0], last.a[1][0]);
         trans[x].a[0][1] = trans[x].a[0][0];
         trans[x].a[1][0] += now.a[0][0] - last.a[0][0];
     }
@@ -133,7 +147,8 @@ inline void update_chain(int x, int val) {
 inline void solve() {
     read(n, m);
     fo(i, 1, n) read(a[i]);
-    for (int i = 1, u, v; i < n; ++i) read(u, v), add(u, v), add(v, u);
+    for (int i = 1, u, v; i < n; ++i)
+        read(u, v), add(u, v), add(v, u);
     dfs1(1, 0), dfs2(1, 1);
     fo(i, 1, n) if (top[i] == i) build(rt[i], dfn[i], bot[i]);
     int lastans = 0, x, val;
@@ -150,7 +165,9 @@ i32 main() {
     int T = 1; // read(T);
     while (T--) solve();
     auto end = chrono::high_resolution_clock::now();
-    auto elapsed = chrono::duration_cast<chrono::nanoseconds>(end - begin);
-    cerr << "Time measured: " << elapsed.count() * 1e-9 << " seconds.\n";
+    auto elapsed =
+        chrono::duration_cast<chrono::nanoseconds>(end - begin);
+    cerr << "Time measured: " << elapsed.count() * 1e-9
+         << " seconds.\n";
     return 0;
 }
