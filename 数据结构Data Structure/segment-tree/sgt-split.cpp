@@ -9,8 +9,12 @@ struct treenode {
     int ls, rs, sum;
 } tr[N << 5];
 inline int newnode() { return cnt ? rub[cnt--] : ++nodecnt; }
-inline void del(int &p) { tr[p].ls = tr[p].rs = tr[p].sum = 0, rub[++cnt] = p, p = 0; }
-inline void push_up(int p) { tr[p].sum = tr[tr[p].ls].sum + tr[tr[p].rs].sum; }
+inline void del(int &p) {
+    tr[p].ls = tr[p].rs = tr[p].sum = 0, rub[++cnt] = p, p = 0;
+}
+inline void push_up(int p) {
+    tr[p].sum = tr[tr[p].ls].sum + tr[tr[p].rs].sum;
+}
 inline void build(int &p, int pl, int pr) {
     if (!p) p = newnode();
     if (pl == pr) return cin >> tr[p].sum, void();

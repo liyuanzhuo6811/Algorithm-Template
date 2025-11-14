@@ -62,6 +62,7 @@ signed main() {
     }
     for (int i = 1; i <= k; ++i) ans[i] = true;
     solve(1, 1, k);
-    for (int i = 1; i <= k; ++i) cout << (ans[i] ? "Yes" : "No") << "\n";
+    for (int i = 1; i <= k; ++i)
+        cout << (ans[i] ? "Yes" : "No") << "\n";
     return 0;
 }

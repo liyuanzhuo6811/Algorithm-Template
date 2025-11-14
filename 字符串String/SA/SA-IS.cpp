@@ -4,7 +4,9 @@
 using namespace std;
 const int N = 1e6 + 10;
 typedef long long ll;
-template <typename T> inline void gm(T *&bas, int siz, T *&op) { op = bas, bas += siz; }
+template <typename T> inline void gm(T *&bas, int siz, T *&op) {
+    op = bas, bas += siz;
+}
 #define pus(x) (sa[cur[a[x]]--] = x)
 #define pul(x) (sa[cur[a[x]]++] = x)
 // clang-format off
@@ -27,9 +29,11 @@ inline void sais(int n, int *a) {
     int *tp, *p;
     gm(A_t, n + 1, tp), gm(A_t, n + 2, p);
     tp[n] = 1;
-    for (int i = n - 1; i >= 1; i--) tp[i] = (a[i] == a[i + 1]) ? tp[i + 1] : (a[i] < a[i + 1]);
+    for (int i = n - 1; i >= 1; i--)
+        tp[i] = (a[i] == a[i + 1]) ? tp[i + 1] : (a[i] < a[i + 1]);
     int m = 0;
-    for (int i = 1; i <= n; i++) rk[i] = (tp[i] && !tp[i - 1]) ? (p[++m] = i, m) : -1;
+    for (int i = 1; i <= n; i++)
+        rk[i] = (tp[i] && !tp[i - 1]) ? (p[++m] = i, m) : -1;
     inds(p);
     int tot = 0, *a1;
     gm(A_t, m + 1, a1);
@@ -38,8 +42,10 @@ inline void sais(int n, int *a) {
         if ((x = rk[sa[i]]) != -1) {
             if (tot == 0 || p[x + 1] - p[x] != p[y + 1] - p[y]) tot++;
             else
-                for (int p1 = p[x], p2 = p[y]; p2 <= p[y + 1]; p1++, p2++)
-                    if ((a[p1] << 1 | tp[p1]) != (a[p2] << 1 | tp[p2])) {
+                for (int p1 = p[x], p2 = p[y]; p2 <= p[y + 1];
+                     p1++, p2++)
+                    if ((a[p1] << 1 | tp[p1]) !=
+                        (a[p2] << 1 | tp[p2])) {
                         tot++;
                         break;
                     }

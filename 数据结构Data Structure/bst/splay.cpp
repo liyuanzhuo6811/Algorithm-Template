@@ -1,9 +1,13 @@
 // {"name": "Splay", "intro": "带旋平衡树。主要用于LCT。"}
 const int N = 1e5 + 5;
 int rt, siz[N], ch[N][2], val[N], tot, fa[N], cnt[N];
-void pushup(int p) { siz[p] = siz[ch[p][0]] + siz[ch[p][1]] + cnt[p]; }
+void pushup(int p) {
+    siz[p] = siz[ch[p][0]] + siz[ch[p][1]] + cnt[p];
+}
 bool get(int p) { return p == ch[fa[p]][1]; }
-void clear(int p) { siz[p] = ch[p][0] = ch[p][1] = val[p] = fa[p] = cnt[p] = 0; }
+void clear(int p) {
+    siz[p] = ch[p][0] = ch[p][1] = val[p] = fa[p] = cnt[p] = 0;
+}
 void rotate(int p) {
     int f = fa[p], g = fa[f], chk = get(p);
     ch[f][chk] = ch[p][chk ^ 1];
@@ -17,7 +21,10 @@ void splay(int p) {
         if (fa[f]) rotate(get(p) == get(f) ? f : p);
     rt = p;
 }
-void nw(int k, int fath, int op) { val[++tot] = k, siz[tot] = cnt[tot] = 1, fa[tot] = fath, ch[fath][op] = tot; }
+void nw(int k, int fath, int op) {
+    val[++tot] = k, siz[tot] = cnt[tot] = 1, fa[tot] = fath,
+    ch[fath][op] = tot;
+}
 void ins(int k) {
     if (!rt) {
         val[++tot] = k, cnt[tot]++, rt = tot;

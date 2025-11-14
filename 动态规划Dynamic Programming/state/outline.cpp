@@ -22,7 +22,8 @@ int main() {
         swap(cur, pre), memset(dp[cur], 0, sizeof(dp[cur]));
         for (int j = 0; j < m; ++j)
             for (int S = 0; S < (1 << m); ++S)
-                if (S & (1 << j)) (dp[pre][S] += dp[pre][S ^ (1 << j)]) %= mod;
+                if (S & (1 << j))
+                    (dp[pre][S] += dp[pre][S ^ (1 << j)]) %= mod;
         for (int S = 0; S < (1 << m); ++S)
             if ((S & E[i]) == 0 && (S & (S << 1)) == 0) {
                 int T = (S | (S << 1) | (S >> 1)) & ((1 << m) - 1);

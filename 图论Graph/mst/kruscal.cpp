@@ -13,7 +13,8 @@ int main() {
     int n, m;
     cin >> n >> m;
     for (int i = 1; i <= n; i++) f[i] = i;
-    for (int i = 1; i <= m; i++) cin >> Edge[i].u >> Edge[i].v >> Edge[i].w;
+    for (int i = 1; i <= m; i++)
+        cin >> Edge[i].u >> Edge[i].v >> Edge[i].w;
     sort(Edge + 1, Edge + 1 + m);
     for (int i = 1; i <= m; i++) {
         int fu = getf(Edge[i].u), fv = getf(Edge[i].v);

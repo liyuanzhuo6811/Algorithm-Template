@@ -33,13 +33,17 @@ inline void up(int rt) {
     tr[rt].mx = tr[rt].mn = tr[rt].now, tr[rt].sum = tr[rt].t;
     if (tr[rt].lc) {
         tr[rt].sum = tr[rt].sum + tr[tr[rt].lc].sum;
-        for (int i = 0; i < k; ++i) tr[rt].mx[i] = max(tr[rt].mx[i], tr[tr[rt].lc].mx[i]);
-        for (int i = 0; i < k; ++i) tr[rt].mn[i] = min(tr[rt].mn[i], tr[tr[rt].lc].mn[i]);
+        for (int i = 0; i < k; ++i)
+            tr[rt].mx[i] = max(tr[rt].mx[i], tr[tr[rt].lc].mx[i]);
+        for (int i = 0; i < k; ++i)
+            tr[rt].mn[i] = min(tr[rt].mn[i], tr[tr[rt].lc].mn[i]);
     }
     if (tr[rt].rc) {
         tr[rt].sum = tr[rt].sum + tr[tr[rt].rc].sum;
-        for (int i = 0; i < k; ++i) tr[rt].mx[i] = max(tr[rt].mx[i], tr[tr[rt].rc].mx[i]);
-        for (int i = 0; i < k; ++i) tr[rt].mn[i] = min(tr[rt].mn[i], tr[tr[rt].rc].mn[i]);
+        for (int i = 0; i < k; ++i)
+            tr[rt].mx[i] = max(tr[rt].mx[i], tr[tr[rt].rc].mx[i]);
+        for (int i = 0; i < k; ++i)
+            tr[rt].mn[i] = min(tr[rt].mn[i], tr[tr[rt].rc].mn[i]);
     }
 }
 inline void spread(int rt) {
@@ -55,7 +59,8 @@ inline void spread(int rt) {
 int build(int pl, int pr, int d = 0) {
     if (pl > pr) return 0;
     int mid = (pl + pr) >> 1, rt = mid;
-    nth_element(p + pl, p + mid, p + pr + 1, [d](pt i, pt j) { return i[d] < j[d]; });
+    nth_element(p + pl, p + mid, p + pr + 1,
+                [d](pt i, pt j) { return i[d] < j[d]; });
     tr[rt].now = p[mid], tr[rt].t = a[mid];
     tr[rt].lc = build(pl, mid - 1, (d + 1) % k);
     tr[rt].rc = build(mid + 1, pr, (d + 1) % k);
@@ -70,7 +75,8 @@ void update(int rt, pt L, pt R, Tag d) {
     }
     if (tr[rt].mx < L || R < tr[rt].mn) return;
     spread(rt);
-    if (L <= tr[rt].now && tr[rt].now <= R) tr[rt].t = tr[rt].t + d, tr[rt].tag = tr[rt].tag + d;
+    if (L <= tr[rt].now && tr[rt].now <= R)
+        tr[rt].t = tr[rt].t + d, tr[rt].tag = tr[rt].tag + d;
     if (tr[rt].lc) update(tr[rt].lc, L, R, d);
     if (tr[rt].rc) update(tr[rt].rc, L, R, d);
     up(rt);

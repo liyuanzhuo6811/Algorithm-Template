@@ -69,17 +69,20 @@ int main() {
     n = strlen(b);
     for (i = 0; i < n; ++i) B[i] = b[n - i - 1] - '0';
     while (lim < (n << 1)) lim <<= 1;
-    for (i = 0; i < lim; ++i) r[i] = (i & 1) * (lim >> 1) + (r[i >> 1] >> 1);
+    for (i = 0; i < lim; ++i)
+        r[i] = (i & 1) * (lim >> 1) + (r[i >> 1] >> 1);
     ntt(A, lim, 1);
     ntt(B, lim, 1);
     for (i = 0; i < lim; ++i) C[i] = 1ll * A[i] * B[i] % P;
     ntt(C, lim, -1);
     int len(0);
     for (i = 0; i < lim; ++i) {
-        if (C[i] >= 10) len = i + 1, C[i + 1] += C[i] / 10, C[i] %= 10;
+        if (C[i] >= 10)
+            len = i + 1, C[i + 1] += C[i] / 10, C[i] %= 10;
         if (C[i]) len = max(len, i);
     }
-    while (C[len] >= 10) C[len + 1] += C[len] / 10, C[len] %= 10, len++;
+    while (C[len] >= 10)
+        C[len + 1] += C[len] / 10, C[len] %= 10, len++;
     for (i = len; ~i; --i) putchar(C[i] + '0');
     puts("");
     return 0;

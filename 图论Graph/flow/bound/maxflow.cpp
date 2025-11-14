@@ -7,8 +7,16 @@ using namespace std;
 namespace fr {
 constexpr int L = (1 << 21);
 char buf[L], obuf[L], *p1 = buf, *p2 = buf, *O = obuf;
-#define gc() ((p1 == p2 && (p2 = (p1 = buf) + fread(buf, 1, L, stdin), p1 == p2)) ? EOF : (*(p1++)))
-#define prc(c) (((O == (obuf + L)) ? (fwrite(obuf, 1, O - obuf, stdout), O = obuf) : (0)), (*(O++)) = (c))
+#define gc()                                                         \
+    ((p1 == p2 &&                                                    \
+      (p2 = (p1 = buf) + fread(buf, 1, L, stdin), p1 == p2))         \
+         ? EOF                                                       \
+         : (*(p1++)))
+#define prc(c)                                                       \
+    (((O == (obuf + L))                                              \
+          ? (fwrite(obuf, 1, O - obuf, stdout), O = obuf)            \
+          : (0)),                                                    \
+     (*(O++)) = (c))
 template <typename T> void rd(T &x) {
     bool flg = false;
     x = 0;
@@ -163,7 +171,8 @@ int main() {
     if (res != tot) {
         wr("please go home to sleep\n");
     } else {
-        for (int i = m + 1; i < max_flow::ecnt / 2; ++i) max_flow::w[i << 1] = max_flow::w[i << 1 | 1] = 0;
+        for (int i = m + 1; i < max_flow::ecnt / 2; ++i)
+            max_flow::w[i << 1] = max_flow::w[i << 1 | 1] = 0;
 
         auto ans = max_flow::dinic(s, t, n);
         ans += max_flow::w[max_flow::ecnt];

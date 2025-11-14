@@ -25,7 +25,8 @@ int qpow(int a, int b, int Mod) {
 struct node {
     int l, r;
     mutable int v;
-    node(const int &ll, const int &rr, const int &vv) : l(ll), r(rr), v(vv) {}
+    node(const int &ll, const int &rr, const int &vv)
+        : l(ll), r(rr), v(vv) {}
     bool operator<(const node &b) const { return l < b.l; }
 };
 set<node> st;
@@ -71,7 +72,8 @@ signed main() {
             x = rnd() % (r - l + 1) + 1;
             tmp.clear();
             it itr = split(r + 1), itl = split(l);
-            for (it I = itl; I != itr; ++I) tmp.push_back({I->v, I->r - I->l + 1});
+            for (it I = itl; I != itr; ++I)
+                tmp.push_back({I->v, I->r - I->l + 1});
             sort(tmp.begin(), tmp.end());
             ans = -1;
             for (int i = 0; i < tmp.size(); i++) {
@@ -87,7 +89,10 @@ signed main() {
             x = rnd() % vmax + 1;
             y = rnd() % vmax + 1;
             it itr = split(r + 1), itl = split(l);
-            for (it I = itl; I != itr; ++I) ans = (ans + qpow(I->v, x, y) * (I->r - I->l + 1) % y) % y;
+            for (it I = itl; I != itr; ++I)
+                ans =
+                    (ans + qpow(I->v, x, y) * (I->r - I->l + 1) % y) %
+                    y;
             cout << ans << '\n';
         }
     }

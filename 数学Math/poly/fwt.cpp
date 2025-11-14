@@ -14,8 +14,10 @@
 #define INF 0x3f3f3f3f3f3f3f3f
 #define gi int, vector<int>, greater<int>
 #define IOS cin.tie(0)->sync_with_stdio(false), cout.tie(0)
-#define fo(i, begin, end)                                                                                              \
-    for (__typeof(end) i = (begin) - ((begin) > (end)); i != (end) - ((begin) > (end)); i += 1 - 2 * ((begin) > (end)))
+#define fo(i, begin, end)                                            \
+    for (__typeof(end) i = (begin) - ((begin) > (end));              \
+         i != (end) - ((begin) > (end));                             \
+         i += 1 - 2 * ((begin) > (end)))
 using namespace std;
 using namespace __gnu_pbds;
 using db = double;
@@ -34,7 +36,8 @@ inline lint read() {
     bool f = 0;
     char c = getchar();
     while (c < '0' || c > '9') f = (c == '-'), c = getchar();
-    while (c >= '0' && c <= '9') x = (x << 1) + (x << 3) + (c ^ 48), c = getchar();
+    while (c >= '0' && c <= '9')
+        x = (x << 1) + (x << 3) + (c ^ 48), c = getchar();
     return f ? -x : x;
 }
 void write(lint x) {
@@ -57,10 +60,12 @@ inline void FWT(ll *f, const ll c[2][2], int n) {
             for (int i = p; i < p + len; ++i) {
                 int tmp = f[i];
                 f[i] = (c[0][0] * f[i] + c[0][1] * f[i + len]) % mod;
-                f[i + len] = (c[1][0] * tmp + c[1][1] * f[i + len]) % mod;
+                f[i + len] =
+                    (c[1][0] * tmp + c[1][1] * f[i + len]) % mod;
             }
 }
-inline void mul(ll *f, ll *g, const ll c[2][2], const ll ic[2][2], int n) {
+inline void mul(ll *f, ll *g, const ll c[2][2], const ll ic[2][2],
+                int n) {
     FWT(f, c, n), FWT(g, c, n);
     fo(i, 0, n) f[i] = (f[i] * g[i]) % mod;
     FWT(f, ic, n);

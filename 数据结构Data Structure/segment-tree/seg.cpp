@@ -16,7 +16,9 @@ struct treenode {
     Tag t = T0;
 } tr[N << 2];
 inline void up(int p) { tr[p].i = tr[p << 1].i + tr[p << 1 | 1].i; }
-inline void pt(int p, Tag t) { tr[p].i = tr[p].i + t, tr[p].t = tr[p].t + t; }
+inline void pt(int p, Tag t) {
+    tr[p].i = tr[p].i + t, tr[p].t = tr[p].t + t;
+}
 inline void spread(int p) {
     if (tr[p].t == T0) return;
     pt(p << 1, tr[p].t), pt(p << 1 | 1, tr[p].t);

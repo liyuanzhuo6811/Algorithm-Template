@@ -9,7 +9,9 @@ struct edge {
     int v, nxt;
     bool is_bridge;
 } e[M << 1];
-void add(int u, int v) { e[++tot].v = v, e[tot].nxt = head[u], head[u] = tot; }
+void add(int u, int v) {
+    e[++tot].v = v, e[tot].nxt = head[u], head[u] = tot;
+}
 int dfn[N], low[N], Time;
 void tarjan(int u, int edge) {
     dfn[u] = low[u] = ++Time;
@@ -18,7 +20,8 @@ void tarjan(int u, int edge) {
         if (!dfn[v]) {
             tarjan(v, i), low[u] = min(low[u], low[v]);
         } else if (i != (edge ^ 1)) low[u] = min(low[u], dfn[v]);
-        if (dfn[u] < low[v]) e[i].is_bridge = e[i ^ 1].is_bridge = true;
+        if (dfn[u] < low[v])
+            e[i].is_bridge = e[i ^ 1].is_bridge = true;
     }
 }
 int dc;

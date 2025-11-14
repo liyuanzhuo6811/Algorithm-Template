@@ -7,7 +7,9 @@ int n, rt, L, R, p, cnt;
 struct node {
     int ls, rs, val, pri, siz;
     node() {}
-    node(int _l, int _r, int _v, int _p, int _s) { ls = _l, rs = _r, val = _v, pri = _p, siz = _s; }
+    node(int _l, int _r, int _v, int _p, int _s) {
+        ls = _l, rs = _r, val = _v, pri = _p, siz = _s;
+    }
 } t[N];
 void pushup(int u) { t[u].siz = t[t[u].ls].siz + t[t[u].rs].siz + 1; }
 void newnode(int x) { t[++cnt] = node(0, 0, x, rng(), 1); }
@@ -19,10 +21,13 @@ void split(int u, int x, int &L, int &R) {
 }
 int merge(int L, int R) {
     if (!L || !R) return L | R;
-    if (t[L].pri <= t[R].pri) return t[L].rs = merge(t[L].rs, R), pushup(L), L;
+    if (t[L].pri <= t[R].pri)
+        return t[L].rs = merge(t[L].rs, R), pushup(L), L;
     else return t[R].ls = merge(L, t[R].ls), pushup(R), R;
 }
-inline void Insert(int x) { newnode(x), split(rt, x, L, R), rt = merge(merge(L, cnt), R); }
+inline void Insert(int x) {
+    newnode(x), split(rt, x, L, R), rt = merge(merge(L, cnt), R);
+}
 inline void Delete(int x) {
     split(rt, x - 1, L, R), split(R, x, p, R);
     p = merge(t[p].ls, t[p].rs), rt = merge(merge(L, p), R);

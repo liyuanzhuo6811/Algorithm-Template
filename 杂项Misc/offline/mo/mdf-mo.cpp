@@ -39,11 +39,13 @@ int main() {
         while (r > q[i].r) add(a[++r]);
         while (last < q[i].t) {
             ++last;
-            if (l <= upd[last].x && upd[last].x <= r) add(upd[last].val), del(a[upd[last].x]);
+            if (l <= upd[last].x && upd[last].x <= r)
+                add(upd[last].val), del(a[upd[last].x]);
             swap(a[upd[last].x], upd[last].val);
         }
         while (last < q[i].t) {
-            if (l <= upd[last].x && upd[last].x <= r) add(upd[last].val), del(a[upd[last].x]);
+            if (l <= upd[last].x && upd[last].x <= r)
+                add(upd[last].val), del(a[upd[last].x]);
             swap(a[upd[last].x], upd[last].val), --last;
         }
         ans[q[i].id] = nowAns;

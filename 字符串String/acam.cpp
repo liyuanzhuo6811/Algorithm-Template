@@ -8,8 +8,12 @@ const int SIZ = 2000005;
 struct node {
     int ch[26], fail, ans, id;
     node() { memset(ch, 0, sizeof(ch)), ans = id = 0; }
-    inline int &operator[](const int x) { return x < 26 ? ch[x] : ch[x - 'a']; }
-    inline int operator[](const int x) const { return x < 26 ? ch[x] : ch[x - 'a']; }
+    inline int &operator[](const int x) {
+        return x < 26 ? ch[x] : ch[x - 'a'];
+    }
+    inline int operator[](const int x) const {
+        return x < 26 ? ch[x] : ch[x - 'a'];
+    }
 } tr[SIZ];
 int tot, ans[SIZ], pcnt;
 vector<int> fail[SIZ];
