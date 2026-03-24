@@ -16,7 +16,7 @@ inline void Radix_Sort(int n, int m) {
 inline void BuildSA(const string &s) {
     int m = 255, n = s.size();
     for (int i = 1; i <= n; i++) {
-        rk[i]  = s[i - 1];
+        rk[i] = s[i - 1];
         tmp[i] = i;
     }
     Radix_Sort(n, m);
@@ -29,23 +29,25 @@ inline void BuildSA(const string &s) {
         swap(tmp, rk);
         rk[sa[1]] = (p = 1);
         for (int i = 2; i <= n; i++) {
-            if (tmp[sa[i]] == tmp[sa[i - 1]] && tmp[sa[i] + k] == tmp[sa[i - 1] + k]) rk[sa[i]] = p;
+            if (tmp[sa[i]] == tmp[sa[i - 1]] &&
+                tmp[sa[i] + k] == tmp[sa[i - 1] + k])
+                rk[sa[i]] = p;
             else rk[sa[i]] = ++p;
         }
         m = p;
     }
 }
 inline void BuildHeight(const string &s) {
-    int n     = s.size(), k = 0;
+    int n = s.size(), k = 0;
     height[1] = 0;
     for (int i = 1; i <= n; i++) {
         if (rk[i] == 1) continue;
         int &nw = height[rk[i]];
         if (k) k--;
         int j = sa[rk[i] - 1];
-        while (k + max(i, j) <= n && s[i + k - 1] == s[j + k - 1]) k++;
+        while (k + max(i, j) <= n && s[i + k - 1] == s[j + k - 1])
+            k++;
         nw = k;
-
     }
 }
 int main() {
